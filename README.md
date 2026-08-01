@@ -1,2 +1,5 @@
-# educraft-creators-site
-Official website for EduCraft Creators
+# EduCraft Creators Site
+
+Official static website for EduCraft Creators.
+
+This repository is intended for Cloudflare Pages.
