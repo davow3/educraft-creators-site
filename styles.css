@@ -136,32 +136,6 @@ h3 { margin: 0 0 8px; font-size: 1.18rem; letter-spacing: 0; }
 .section-heading { display: grid; gap: 4px; margin-bottom: 26px; }
 .intro-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
 .intro-grid p, .contact-section p, .craft-note p { margin: 0; color: #3f4f5a; font-size: 1.02rem; }
-.business-profile {
-  margin-top: 28px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-}
-.business-profile dl {
-  display: grid;
-  gap: 12px;
-  margin: 0;
-}
-.business-profile div {
-  display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 16px;
-}
-.business-profile dt {
-  color: var(--green);
-  font-weight: 900;
-}
-.business-profile dd {
-  margin: 0;
-  color: #3f4f5a;
-}
 .apps-section { max-width: none; background: rgba(217, 238, 248, 0.56); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .apps-section > .section-heading, .apps-grid { max-width: 1160px; margin-left: auto; margin-right: auto; }
 .apps-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
@@ -219,6 +193,12 @@ h3 { margin: 0 0 8px; font-size: 1.18rem; letter-spacing: 0; }
   background: var(--green);
 }
 .site-footer a { font-weight: 900; text-decoration: underline; text-underline-offset: 3px; }
+.footer-meta {
+  display: grid;
+  gap: 2px;
+  text-align: right;
+  font-size: 0.84rem;
+}
 .policy-hero { padding: clamp(52px, 7vw, 86px) clamp(20px, 6vw, 84px) 34px; background: var(--mint); border-bottom: 1px solid var(--line); }
 .policy-hero h1 { font-size: clamp(2.1rem, 5vw, 4rem); }
 .policy-hero p:last-child { margin: 18px 0 0; color: var(--muted); font-weight: 700; }
@@ -244,5 +224,5 @@ h3 { margin: 0 0 8px; font-size: 1.18rem; letter-spacing: 0; }
   .art-caption { left: 4%; max-width: 62%; }
   .team-member { grid-template-columns: 1fr; text-align: center; }
   .team-member img { justify-self: center; }
-  .business-profile div { grid-template-columns: 1fr; gap: 2px; }
+  .footer-meta { text-align: left; }
 }
