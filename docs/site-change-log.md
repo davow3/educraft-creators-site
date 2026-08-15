@@ -5,7 +5,7 @@ EduCraft Creators site の公開前メンテナンス履歴です。
 
 ## 2026-08-11
 
-- サイト資源を `math/educraft-creators-site` に移動
+- サイト資源を独立した `educraft-creators-site` リポジトリへ移動
 - ブラウザタブの favicon をコック顔に変更
 - 「つくっている人たち」の yuichi 画像を青線コックに戻した
 - ヒーロー画像は色付きコックのまま維持
