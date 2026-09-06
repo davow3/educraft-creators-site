@@ -8,6 +8,7 @@
   <meta name="description" content="DB Bottleneck Analyzerは、PostgreSQLを読み取り専用・低負荷で観測し、DBAの初動順に問題候補と改善前後を確認できるWindows向けツールです。">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
   <script src="checkout-config.js" defer></script>
   <script src="app.js" defer></script>
 </head>
@@ -24,11 +25,12 @@
     <section class="product-hero">
       <div class="hero-copy">
         <p class="kicker">POSTGRESQL SAFE OBSERVER</p>
-        <div class="release-line"><span data-i18n="preview">プレビュー版 v0.3.0</span><span class="release-dot"></span><span data-i18n="salesPreparing">販売準備中</span></div>
+        <div class="release-line"><span data-i18n="preview">Windows版 v0.4.0</span><span class="release-dot"></span><span data-i18n="trialAvailable">14日間無料試用</span></div>
         <h1 data-i18n="heroTitle">問題のあるSQLとテーブルを、<br>DBAの初動順に。</h1>
         <p class="hero-lead" data-i18n="heroLead">DB Bottleneck Analyzerは、PostgreSQLの統計とカタログを読み取り専用で観測し、ロック、優先SQL、テーブル、改善前後の差分を一つの画面で確認するWindows向けツールです。</p>
-        <div class="hero-actions"><a class="button primary" href="#buy" data-i18n="purchaseInfo">購入案内を見る</a><a class="button secondary" href="#workflow" data-i18n="seeWorkflow">診断の流れを見る</a></div>
-        <p class="hero-note" data-i18n="heroNote">アプリ内の固定サンプルはDB接続不要です。実DBへの通信や負荷なしで、問題発生から改善確認まで試せます。</p>
+        <div class="hero-actions"><a class="button primary" href="downloads/DB-Bottleneck-Analyzer-0.4.0-x64-setup.exe" download data-i18n="downloadTrial">14日間無料で試す</a><a class="button secondary" href="#buy" data-i18n="purchaseInfo">購入案内を見る</a></div>
+        <p class="hero-note" data-i18n="heroNote">インストールだけでは試用期間は始まりません。最初の実DB診断が成功した時点から14日間、全機能を試せます。</p>
+        <p class="download-note"><span data-i18n="unsignedNote">現在のWindows版は未署名です。組織のセキュリティ規程に従い、まず検証端末で確認してください。</span><br><code>SHA-256 EE51885823D06575D761891158CBD4012D7088374DA85301D85E7C552C49FAAD</code></p>
       </div>
       <div class="console-preview" aria-label="DB Bottleneck Analyzer diagnostic preview">
         <div class="console-top"><span class="scope-mark small" aria-hidden="true"><i></i></span><div><strong>sample_orders</strong><small>PostgreSQL 17 · demo_observer</small></div><span class="demo-pill">DEMO</span></div>
@@ -68,27 +70,41 @@
     </section>
 
     <section class="license-section" id="license">
-      <header class="section-heading"><p class="kicker">LICENSE PLAN</p><h2 data-i18n="licenseTitle">閉域環境で共有しやすい端末ライセンス</h2><p data-i18n="licenseLead">人数ではなく、DB Bottleneck Analyzerを実行する診断端末の台数を基準にする予定です。</p></header>
+      <header class="section-heading"><p class="kicker">OFFLINE LICENSE</p><h2 data-i18n="licenseTitle">閉域環境で共有しやすい端末ライセンス</h2><p data-i18n="licenseLead">常時オンライン認証を使わず、DB Bottleneck Analyzerを実行する診断端末1台に紐づきます。</p></header>
       <div class="license-grid">
-        <article class="license-primary"><span class="license-badge" data-i18n="standardPlan">基本ライセンス案</span><strong data-i18n="deviceLimit">診断端末 3台まで</strong><p data-i18n="deviceDefinition">DB Bottleneck AnalyzerをインストールするWindows PC、踏み台サーバー、VMをそれぞれ1台として数えます。</p></article>
+        <article class="license-primary"><span class="license-badge" data-i18n="standardPlan">Standardライセンス</span><strong data-i18n="deviceLimit">診断端末 1台</strong><p data-i18n="deviceDefinition">DB Bottleneck Analyzerを実行するWindows PC、踏み台サーバー、VMのいずれか1台に固定します。</p></article>
         <article><span data-i18n="userCountLabel">利用人数</span><strong data-i18n="unlimited">制限なし</strong><p data-i18n="userCountNote">購入者本人または同一法人内の利用者が共有できます。</p></article>
         <article><span data-i18n="databaseCountLabel">接続先DB</span><strong data-i18n="unlimited">制限なし</strong><p data-i18n="databaseCountNote">同じ購入者が管理するPostgreSQLへ接続できます。</p></article>
-        <article><span data-i18n="offlineLabel">閉域・オフライン</span><strong data-i18n="offlinePlanned">販売版で対応予定</strong><p data-i18n="offlineNote">常時オンライン認証やテレメトリーを前提にしない方式を検討しています。</p></article>
+        <article><span data-i18n="offlineLabel">閉域・オフライン</span><strong data-i18n="offlinePlanned">対応済み</strong><p data-i18n="offlineNote">端末申請ファイルと署名済みライセンスを使い、DB情報を販売者へ送りません。</p></article>
       </div>
-      <p class="license-caution" data-i18n="licenseCaution">現在のプレビュー版にはライセンス制御はありません。正式販売前に端末認証、移行方法、利用規約を確定します。</p>
+      <p class="license-caution" data-i18n="licenseCaution">端末交換やWindows再導入時は、購入情報を確認してライセンスを再発行します。</p>
     </section>
 
     <section class="page-section purchase-section" id="buy">
-      <div class="purchase-copy"><p class="kicker">PURCHASE</p><h2 data-i18n="purchaseTitle">地域に合わせた買い切り価格を検討中</h2><p data-i18n="purchaseLead">表示言語とは別に購入地域を選べます。価格、コード署名、利用規約、返金条件の確定後に販売を開始します。</p><ul><li data-i18n="license1">1ライセンスで診断端末3台までを予定</li><li data-i18n="license2">利用人数と接続先PostgreSQL数は制限しない予定</li><li data-i18n="license3">閉域環境向けにオフライン認証を予定</li></ul></div>
+      <div class="purchase-copy"><p class="kicker">TRY, THEN BUY</p><h2 data-i18n="purchaseTitle">14日間試してから、必要なら買い切り</h2><p data-i18n="purchaseLead">日本国内向けStandardライセンスをStripeで購入できます。日本国外向けのPolar決済は準備中です。</p><ul><li data-i18n="license1">1ライセンスにつき診断端末1台</li><li data-i18n="license2">同一組織内の利用人数と接続先PostgreSQL数は制限なし</li><li data-i18n="license3">購入後は端末申請ファイルをメールで送り、オフラインライセンスを受け取ります</li></ul></div>
       <form class="purchase-card" onsubmit="return false">
         <label for="purchase-region" data-i18n="regionLabel">購入地域</label>
         <select id="purchase-region"><option value="jp" data-i18n="regionJapan">日本</option><option value="west" data-i18n="regionWest">米国・欧州（スペイン除く）・カナダ</option><option value="kr" data-i18n="regionKorea">韓国</option><option value="es" data-i18n="regionSpanish">スペイン・中南米</option><option value="id" data-i18n="regionIndonesia">インドネシア</option></select>
         <div class="price-block"><span data-i18n="plannedPrice">販売予定価格</span><strong id="planned-price">16,390円（税込）</strong><small id="price-note">税抜14,900円＋消費税1,490円</small></div>
         <div class="provider-row"><span data-i18n="paymentProvider">決済サービス</span><strong id="provider-name">Stripe</strong></div>
         <p id="checkout-language-note" class="checkout-note" hidden></p>
-        <button id="checkout-button" class="button primary wide" type="button" disabled data-i18n="salesPreparing">販売準備中</button>
+        <div id="stripe-buy-container">
+          <stripe-buy-button buy-button-id="buy_btn_1UCg3k3x7jzMDMskzK0OFbM1" publishable-key="pk_live_51UCYsm3x7jzMDMskZMEK7QPCK41bYho7qGNbDtndjCH945Wqd7Z1SulygoRK8ZtylqePeMNdaLYDIEgG4M9ClgDG00bmCDd7pe"></stripe-buy-button>
+        </div>
+        <button id="checkout-button" class="button primary wide" type="button" disabled data-i18n="globalPreparing">日本国外向け決済は準備中</button>
         <p class="checkout-note" data-i18n="checkoutNote">決済情報はStripeまたはPolarの決済画面で入力します。DB Bottleneck Analyzerサイトではカード番号を保存しません。</p>
       </form>
+    </section>
+
+    <section class="delivery-section" id="delivery">
+      <header class="section-heading"><p class="kicker">LICENSE DELIVERY</p><h2 data-i18n="deliveryTitle">購入後のライセンス受取手順</h2><p data-i18n="deliveryLead">インストーラーは試用版と製品版で共通です。再ダウンロードは不要です。</p></header>
+      <ol class="delivery-steps">
+        <li><span>1</span><div><strong data-i18n="delivery1Title">購入を完了</strong><p data-i18n="delivery1Body">Stripeの注文番号と購入時メールアドレスを控えます。</p></div></li>
+        <li><span>2</span><div><strong data-i18n="delivery2Title">端末申請を出力</strong><p data-i18n="delivery2Body">アプリの「ライセンス」から.dba-requestを保存します。DB情報やSQLは含まれません。</p></div></li>
+        <li><span>3</span><div><strong data-i18n="delivery3Title">メールで申請</strong><p><span data-i18n="delivery3Body">注文番号、購入時メールアドレス、端末申請ファイルを</span> <a href="mailto:educraftcreators@gmail.com?subject=DB%20Bottleneck%20Analyzer%20license%20request">educraftcreators@gmail.com</a> <span data-i18n="delivery3Tail">へ送ります。</span></p></div></li>
+        <li><span>4</span><div><strong data-i18n="delivery4Title">ライセンスを読込</strong><p data-i18n="delivery4Body">販売者から届く.dba-licenseを同じ画面で読み込むと正規版になります。</p></div></li>
+      </ol>
+      <p class="delivery-note" data-i18n="deliveryTiming">初期販売では購入確認後2営業日以内の手動発行を予定しています。自動発行ではありません。</p>
     </section>
 
     <section class="page-section requirements-section" id="requirements">
@@ -100,7 +116,7 @@
   <footer class="product-footer">
     <div><strong>DB Bottleneck Analyzer</strong><span>PostgreSQL diagnostic tool</span></div>
     <nav class="footer-links" aria-label="Legal information"><a href="legal.html">販売情報・特定商取引法</a><a href="terms.html">利用規約</a><a href="privacy.html">プライバシー</a><a href="refund.html">返金・キャンセル</a></nav>
-    <p data-i18n="legalPending">販売準備中です。購入受付前に、決済リンクとライセンス提供手順を確定します。</p>
+    <p data-i18n="legalPending">日本国内向け販売を受付中です。日本国外向け決済は準備中です。</p>
   </footer>
 </body>
 </html>
