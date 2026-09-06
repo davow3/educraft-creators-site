@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>DB Bottleneck Analyzer | PostgreSQL安全診断・比較ツール</title>
+  <meta name="description" content="DB Bottleneck Analyzerは、PostgreSQLを読み取り専用・低負荷で観測し、DBAの初動順に問題候補と改善前後を確認できるWindows向けツールです。">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="checkout-config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="product-header" id="top">
+    <a class="product-brand" href="#top"><span class="scope-mark" aria-hidden="true"><i></i></span><span><strong>DB Bottleneck Analyzer</strong><small>PostgreSQL diagnostic tool</small></span></a>
+    <nav class="product-nav" aria-label="Product navigation">
+      <a href="#workflow" data-i18n="navWorkflow">診断の流れ</a><a href="#safety" data-i18n="navSafety">安全設計</a><a href="#reports" data-i18n="navReports">レポート</a><a href="#license" data-i18n="navLicense">ライセンス</a><a href="#requirements" data-i18n="navRequirements">動作環境</a><a href="legal.html">販売情報</a>
+    </nav>
+    <label class="language-picker"><span class="sr-only" data-i18n="languageLabel">言語</span><select id="language-select" aria-label="Language"><option value="ja">日本語</option><option value="en">English</option><option value="es">Español</option><option value="id">Bahasa Indonesia</option><option value="ko">한국어</option></select></label>
+  </header>
+
+  <main>
+    <section class="product-hero">
+      <div class="hero-copy">
+        <p class="kicker">POSTGRESQL SAFE OBSERVER</p>
+        <div class="release-line"><span data-i18n="preview">プレビュー版 v0.3.0</span><span class="release-dot"></span><span data-i18n="salesPreparing">販売準備中</span></div>
+        <h1 data-i18n="heroTitle">問題のあるSQLとテーブルを、<br>DBAの初動順に。</h1>
+        <p class="hero-lead" data-i18n="heroLead">DB Bottleneck Analyzerは、PostgreSQLの統計とカタログを読み取り専用で観測し、ロック、優先SQL、テーブル、改善前後の差分を一つの画面で確認するWindows向けツールです。</p>
+        <div class="hero-actions"><a class="button primary" href="#buy" data-i18n="purchaseInfo">購入案内を見る</a><a class="button secondary" href="#workflow" data-i18n="seeWorkflow">診断の流れを見る</a></div>
+        <p class="hero-note" data-i18n="heroNote">アプリ内の固定サンプルはDB接続不要です。実DBへの通信や負荷なしで、問題発生から改善確認まで試せます。</p>
+      </div>
+      <div class="console-preview" aria-label="DB Bottleneck Analyzer diagnostic preview">
+        <div class="console-top"><span class="scope-mark small" aria-hidden="true"><i></i></span><div><strong>sample_orders</strong><small>PostgreSQL 17 · demo_observer</small></div><span class="demo-pill">DEMO</span></div>
+        <div class="queue-title"><span data-i18n="actionQueue">優先対応キュー</span><small data-i18n="queueOrder">影響 → 対象 → 根拠 → 次の確認</small></div>
+        <article class="finding critical"><span class="rank">#1</span><div><strong data-i18n="findingLock">注文更新が48秒ブロック</strong><p data-i18n="findingLockTarget">対象: orders / nightly_batch</p></div><span class="severity" data-i18n="critical">重大</span></article>
+        <article class="finding warning"><span class="rank">#2</span><div><strong data-i18n="findingSql">注文検索SQLの平均1.85秒</strong><p>orders · order_items · 1,240 calls</p></div><span class="severity" data-i18n="warning">警告</span></article>
+        <article class="finding warning"><span class="rank">#3</span><div><strong data-i18n="findingTable">dead tuples 1.82M / 23%</strong><p>public.orders</p></div><span class="severity" data-i18n="review">要確認</span></article>
+        <div class="comparison"><span data-i18n="afterTuning">チューニング後</span><strong>1.85 s → 90 ms</strong><span class="improved" data-i18n="improved">95%改善</span></div>
+      </div>
+    </section>
+
+    <section class="guardrails" aria-label="Safety limits"><div><strong>0</strong><span data-i18n="dbChanges">DBへの変更</span></div><div><strong>1</strong><span data-i18n="maxConnection">最大接続数</span></div><div><strong>1.5s</strong><span data-i18n="queryTimeout">SQLタイムアウト</span></div><div><strong>OFF</strong><span data-i18n="refreshDefault">自動更新の初期値</span></div></section>
+
+    <section class="page-section" id="workflow">
+      <header class="section-heading"><p class="kicker">DBA FIRST RESPONSE</p><h2 data-i18n="workflowTitle">最初に見るべき順番を崩さない</h2><p data-i18n="workflowLead">結果の羅列ではなく、影響が大きい候補から安全な次の確認へ進みます。</p></header>
+      <div class="steps">
+        <article><span>01</span><h3 data-i18n="step1Title">優先対応を確認</h3><p data-i18n="step1Body">ロック、長時間トランザクション、SQL、テーブルの候補を影響順に確認します。</p></article>
+        <article><span>02</span><h3 data-i18n="step2Title">根拠を掘り下げる</h3><p data-i18n="step2Body">SQL統計、関連テーブル候補、dead tuples、実行元の観測結果を確認します。</p></article>
+        <article><span>03</span><h3 data-i18n="step3Title">改善前後を比較</h3><p data-i18n="step3Body">同等条件のスナップショットを比較し、SQL・テーブル単位で変化を確認します。</p></article>
+      </div>
+    </section>
+
+    <section class="dark-section" id="safety">
+      <div class="section-heading"><p class="kicker">SAFE BY DESIGN</p><h2 data-i18n="safetyTitle">観測はする。変更はしない。</h2><p data-i18n="safetyLead">本番利用ではObserveとRecommendに限定し、変更や負荷試験は検証環境へ分離します。</p></div>
+      <div class="safety-grid">
+        <article><h3 data-i18n="doesTitle">DB Bottleneck Analyzerが行うこと</h3><ul><li data-i18n="does1">統計ビューとシステムカタログの読み取り</li><li data-i18n="does2">最大1接続・直列取得・行数制限</li><li data-i18n="does3">SQL 1.5秒、ロック待ち0.25秒で中止</li><li data-i18n="does4">外部キー定義からE-R構造を表示</li></ul></article>
+        <article><h3 data-i18n="doesNotTitle">DB Bottleneck Analyzerが行わないこと</h3><ul><li data-i18n="doesNot1">VACUUMや設定変更の自動実行</li><li data-i18n="doesNot2">EXPLAIN ANALYZEの本番実行</li><li data-i18n="doesNot3">セッション終了や拡張機能追加</li><li data-i18n="doesNot4">テーブルの業務データ取得</li></ul></article>
+        <article><h3 data-i18n="privacyTitle">保持とSQL表示を選べる</h3><ul><li data-i18n="privacy1">分析結果をメモリだけに保持</li><li data-i18n="privacy2">必要時だけOS資格情報ストアで暗号化保存</li><li data-i18n="privacy3">SQL本文は取得しない／概要／全文から選択</li><li data-i18n="privacy4">パスワードをレポートへ含めない</li></ul></article>
+      </div>
+      <p class="safety-caution" data-i18n="safetyCaution">負荷ゼロを保証するものではありません。最初は検証環境または低負荷時間帯で確認してください。</p>
+    </section>
+
+    <section class="page-section reports-section" id="reports">
+      <header class="section-heading"><p class="kicker">REPORT &amp; COMPARE</p><h2 data-i18n="reportsTitle">画面の外でも検討を続けられる</h2><p data-i18n="reportsLead">日本語・英語のレポートを保存し、チューニング前後の説明やAI解析用データとして利用できます。</p></header>
+      <div class="report-grid"><article><strong>.md</strong><span data-i18n="mdReport">レビューとAI解析向け</span></article><article><strong>.html</strong><span data-i18n="htmlReport">ブラウザで共有・閲覧</span></article><article><strong>.xlsx</strong><span data-i18n="xlsxReport">表計算で並べ替え・追記</span></article><article><strong>.json</strong><span data-i18n="jsonReport">他ツールとの連携向け</span></article></div>
+      <p class="data-warning" data-i18n="exportWarning">出力にはDB名、テーブル名、SQL概要などの機密情報が含まれる場合があります。持ち出し先の規程を確認してください。</p>
+    </section>
+
+    <section class="license-section" id="license">
+      <header class="section-heading"><p class="kicker">LICENSE PLAN</p><h2 data-i18n="licenseTitle">閉域環境で共有しやすい端末ライセンス</h2><p data-i18n="licenseLead">人数ではなく、DB Bottleneck Analyzerを実行する診断端末の台数を基準にする予定です。</p></header>
+      <div class="license-grid">
+        <article class="license-primary"><span class="license-badge" data-i18n="standardPlan">基本ライセンス案</span><strong data-i18n="deviceLimit">診断端末 3台まで</strong><p data-i18n="deviceDefinition">DB Bottleneck AnalyzerをインストールするWindows PC、踏み台サーバー、VMをそれぞれ1台として数えます。</p></article>
+        <article><span data-i18n="userCountLabel">利用人数</span><strong data-i18n="unlimited">制限なし</strong><p data-i18n="userCountNote">購入者本人または同一法人内の利用者が共有できます。</p></article>
+        <article><span data-i18n="databaseCountLabel">接続先DB</span><strong data-i18n="unlimited">制限なし</strong><p data-i18n="databaseCountNote">同じ購入者が管理するPostgreSQLへ接続できます。</p></article>
+        <article><span data-i18n="offlineLabel">閉域・オフライン</span><strong data-i18n="offlinePlanned">販売版で対応予定</strong><p data-i18n="offlineNote">常時オンライン認証やテレメトリーを前提にしない方式を検討しています。</p></article>
+      </div>
+      <p class="license-caution" data-i18n="licenseCaution">現在のプレビュー版にはライセンス制御はありません。正式販売前に端末認証、移行方法、利用規約を確定します。</p>
+    </section>
+
+    <section class="page-section purchase-section" id="buy">
+      <div class="purchase-copy"><p class="kicker">PURCHASE</p><h2 data-i18n="purchaseTitle">地域に合わせた買い切り価格を検討中</h2><p data-i18n="purchaseLead">表示言語とは別に購入地域を選べます。価格、コード署名、利用規約、返金条件の確定後に販売を開始します。</p><ul><li data-i18n="license1">1ライセンスで診断端末3台までを予定</li><li data-i18n="license2">利用人数と接続先PostgreSQL数は制限しない予定</li><li data-i18n="license3">閉域環境向けにオフライン認証を予定</li></ul></div>
+      <form class="purchase-card" onsubmit="return false">
+        <label for="purchase-region" data-i18n="regionLabel">購入地域</label>
+        <select id="purchase-region"><option value="jp" data-i18n="regionJapan">日本</option><option value="west" data-i18n="regionWest">米国・欧州（スペイン除く）・カナダ</option><option value="kr" data-i18n="regionKorea">韓国</option><option value="es" data-i18n="regionSpanish">スペイン・中南米</option><option value="id" data-i18n="regionIndonesia">インドネシア</option></select>
+        <div class="price-block"><span data-i18n="plannedPrice">販売予定価格</span><strong id="planned-price">14,900円（税込）</strong><small id="price-note">買い切りライセンス</small></div>
+        <div class="provider-row"><span data-i18n="paymentProvider">決済サービス</span><strong id="provider-name">Stripe</strong></div>
+        <p id="checkout-language-note" class="checkout-note" hidden></p>
+        <button id="checkout-button" class="button primary wide" type="button" disabled data-i18n="salesPreparing">販売準備中</button>
+        <p class="checkout-note" data-i18n="checkoutNote">決済情報はStripeまたはPolarの決済画面で入力します。DB Bottleneck Analyzerサイトではカード番号を保存しません。</p>
+      </form>
+    </section>
+
+    <section class="page-section requirements-section" id="requirements">
+      <header class="section-heading"><p class="kicker">REQUIREMENTS</p><h2 data-i18n="requirementsTitle">動作環境</h2></header>
+      <dl class="requirements"><div><dt>OS</dt><dd>Windows 10 / 11, 64-bit</dd></div><div><dt>PostgreSQL</dt><dd data-i18n="postgresVersions">14・17・18を検証対象として準備中</dd></div><div><dt data-i18n="connection">接続</dt><dd data-i18n="connectionValue">TCP/IP接続、専用の読み取り専用ユーザーを推奨</dd></div><div><dt data-i18n="extensions">拡張</dt><dd data-i18n="extensionsValue">pg_stat_statementsは有効な場合のみ使用。自動追加しません</dd></div></dl>
+    </section>
+  </main>
+
+  <footer class="product-footer">
+    <div><strong>DB Bottleneck Analyzer</strong><span>PostgreSQL diagnostic tool</span></div>
+    <nav class="footer-links" aria-label="Legal information"><a href="legal.html">販売情報・特定商取引法</a><a href="terms.html">利用規約</a><a href="privacy.html">プライバシー</a><a href="refund.html">返金・キャンセル</a></nav>
+    <p data-i18n="legalPending">販売準備中です。購入受付前に、決済リンクとライセンス提供手順を確定します。</p>
+  </footer>
+</body>
+</html>
