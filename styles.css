@@ -152,6 +152,7 @@ h3 { margin: 0 0 8px; font-size: 1.18rem; letter-spacing: 0; }
 }
 .app-card img { width: 72px; height: 72px; border-radius: 8px; }
 .app-card p, .team-member p { margin: 0; color: var(--muted); }
+.app-actions { margin-top: 16px; }
 .status {
   display: inline-flex;
   width: fit-content;
