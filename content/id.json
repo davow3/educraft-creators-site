@@ -1,0 +1,90 @@
+{
+  "lang": "id",
+  "label": "Bahasa Indonesia",
+  "ogLocale": "id_ID",
+  "ui": {
+    "skip": "Langsung ke konten", "apps": "Aplikasi", "about": "Tentang kami", "contact": "Kontak", "privacy": "Kebijakan privasi", "language": "Bahasa", "home": "Beranda", "details": "Kenali game ini", "play": "Lihat di Google Play", "watch": "Tonton di YouTube", "available": "Tersedia di Google Play", "inDevelopment": "Dalam pengembangan", "features": "Keseruan yang bisa dinikmati", "how": "Cara bermain", "screenshots": "Lihat tampilan gamenya", "screenshotNote": "Tangkapan layar menampilkan versi pengembangan. Beberapa fitur sedang disiapkan untuk pembaruan mendatang.", "faq": "Pertanyaan dari orang tua", "plans": "Hadir dalam pembaruan mendatang", "related": "Cara lain untuk bermain sambil belajar matematika", "backApps": "Jelajahi semua aplikasi", "footer": "Merek aplikasi edukasi dari EduCraft Studio.", "notFound": "Halaman ini tidak ditemukan.", "notFoundText": "Pilih bahasa atau kembali ke beranda.", "videoJa": "Video berbahasa Jepang", "videoId": "Video berbahasa Indonesia", "videoNote": "Adegan keluarga di awal video menggunakan tokoh fiktif yang dibuat dengan AI. Cuplikan game merupakan demonstrasi dan mungkin menampilkan fitur yang belum dirilis.", "support": "Untuk mendapatkan bantuan, buka Dukungan aplikasi di halaman Google Play aplikasi terkait.", "artCredit": "Karakter orisinal karya akimichi", "team": "Tim di balik game", "developer": "Perencanaan dan pengembangan", "designer": "Desain karakter dan dunia game", "developerText": "yuichi mengembangkan pengalaman belajar sederhana yang mengajak anak mencoba satu soal lagi.", "designerText": "Gambar karya akimichi menginspirasi teman, musuh, dan dunia dalam game kami.", "otherApps": "Game lain yang sedang dikembangkan", "questShot": "Tampilan beranda Math Quest Masters dalam bahasa Indonesia", "fightShot": "Tampilan beranda Pertarungan Matematika dalam bahasa Indonesia", "websiteLanguage": "Saat membuka alamat utama situs, bahasa tampilan mengikuti bahasa pilihan browser. Bahasa dapat diubah kapan saja. Pilihan Anda hanya disimpan di browser ini."
+  },
+  "home": {
+    "title": "Game belajar matematika anak dan duel keluarga | EduCraft Creators",
+    "description": "Temukan Math Quest Masters, RPG belajar matematika untuk materi sekolah dasar, dan Pertarungan Matematika, game duel keluarga di Android. Lihat cara bermain, tangkapan layar, dan panduan untuk orang tua.",
+    "eyebrow": "Belajar bersama lewat permainan",
+    "heading": "Petualangan matematika. Tantangan keluarga.",
+    "lead": "Satu soal lagi, satu petualangan lagi. EduCraft Creators membuat game belajar di Android untuk anak dan keluarga: ikuti cerita dalam Math Quest Masters atau saling menantang di Pertarungan Matematika.",
+    "appsTitle": "Pilih cara seru bermain dengan matematika",
+    "appsLead": "Kenali materi belajar, cara bermain, dan informasi untuk orang tua dari setiap game sebelum membuka Google Play.",
+    "aboutTitle": "Ide sederhana menjadi dunia yang bisa dimainkan",
+    "aboutParagraphs": ["EduCraft Creators adalah merek aplikasi edukasi dari EduCraft Studio. Game kami berawal dari kegiatan belajar dan berkreasi di rumah, dengan ide karakter orisinal serta ilustrasi karya akimichi.", "Kami membuat dan menyempurnakan game sederhana yang mengajak anak mencoba, berpikir, lalu mencoba lagi. Math Quest Masters dan Pertarungan Matematika tersedia di Google Play; proyek kami lainnya masih dalam pengembangan."],
+    "contactTitle": "Ada pertanyaan tentang game?",
+    "otherApps": [
+      {"name": "Math Defender", "text": "Jawab soal matematika untuk mempertahankan kastel. Saat ini dalam pengujian tertutup.", "icon": "app-defense-v2.png"},
+      {"name": "Kazu Tap", "text": "Game belajar sederhana dengan mengetuk angka, untuk anak yang lebih kecil. Dalam pengembangan.", "icon": "app-kazutap-v2.png"},
+      {"name": "Semangka Mengantuk Kaba", "text": "Game santai untuk mengingat urutan dan memakan semangka. Dalam pengembangan.", "icon": "app-kaba.png"}
+    ]
+  },
+  "apps": {
+    "quest": {
+      "name": "Math Quest Masters",
+      "title": "Math Quest Masters: RPG belajar matematika anak | EduCraft",
+      "description": "Jawab soal matematika sekolah dasar dalam RPG Android. Jelajahi bab cerita, lawan musuh, dan kumpulkan teman, senjata, serta sihir di Math Quest Masters.",
+      "tagline": "Satu soal lagi. Satu petualangan lagi.",
+      "summary": "RPG edukasi dengan materi matematika kelas 1–6 sekolah dasar di Jepang. Jawab soal untuk melawan musuh, jelajahi bab cerita, dan kumpulkan teman, senjata, serta sihir.",
+      "audience": "Pilih materi belajar sesuai pengalaman anak. Penamaan kelas mengikuti kurikulum sekolah dasar Jepang; kesesuaiannya dengan jenjang sekolah dapat berbeda di setiap negara.",
+      "billing": "Lihat halaman Google Play dan informasi dalam aplikasi untuk harga terbaru, pembelian dalam aplikasi, serta materi belajar yang tersedia.",
+      "features": [
+        {"title": "Matematika dalam petualangan", "text": "Jawab soal untuk melanjutkan pertarungan dan menjelajahi cerita."},
+        {"title": "Kumpulkan tim pilihanmu", "text": "Temukan teman, senjata, dan sihir seiring kemajuan dalam setiap bab."},
+        {"title": "Berlatih sesuai kemampuan", "text": "Pilih materi matematika sekolah dasar yang sesuai dan pelajari kembali soal sambil berlatih."}
+      ],
+      "steps": ["Pilih tingkat dan bab yang sesuai dengan kemampuan anak.", "Baca soal, pilih jawaban, lalu lanjutkan pertarungan.", "Gunakan fitur belajar dan pengulangan materi untuk berlatih kembali, lalu lanjutkan petualangan."],
+      "faqs": [
+        {"q": "Untuk siapa game ini?", "a": "Untuk anak yang sedang belajar matematika sekolah dasar dan keluarga yang mencari cara berlatih sambil bermain. Penamaan kelas mengikuti kelas 1–6 di Jepang, jadi pilih berdasarkan materi yang dipelajari, bukan hanya usia."},
+        {"q": "Bahasa apa saja yang tersedia?", "a": "Antarmuka tersedia dalam bahasa Jepang, Inggris, Spanyol, Indonesia, dan Korea. Urutan materi belajar mengikuti matematika sekolah dasar Jepang."},
+        {"q": "Apakah game ini sama dengan Pertarungan Matematika?", "a": "Math Quest Masters berfokus pada petualangan RPG untuk satu pemain. Pertarungan Matematika berfokus pada duel matematika bersama keluarga, teman, dan lawan daring."},
+        {"q": "Di mana saya bisa melihat harga dan rincian pembelian?", "a": "Buka tautan Google Play untuk ketersediaan dan harga terbaru. Rincian pembukaan materi dan pembelian dijelaskan di dalam aplikasi sebelum membeli."}
+      ]
+    },
+    "fight": {
+      "name": "Pertarungan Matematika",
+      "title": "Pertarungan Matematika: duel keluarga di satu HP | EduCraft",
+      "description": "Tantang keluarga dan teman dalam duel matematika di satu HP Android atau mainkan secara daring. Setiap pemain dapat memilih kelas dan tingkat yang sesuai di Pertarungan Matematika.",
+      "tagline": "Satu HP. Dua pemain. Adu matematika.",
+      "summary": "Duduk berhadapan dan gunakan satu HP Android untuk duel matematika bersama keluarga. Anak dan orang dewasa dapat memilih kelas serta tingkat masing-masing. Anda juga bisa menantang teman dari jauh atau mencari lawan daring.",
+      "audience": "Untuk keluarga dan teman yang ingin berlatih matematika bersama. Sesuaikan tingkat setiap pemain agar tantangan bersama terasa lebih menyenangkan.",
+      "billing": "Pertarungan Matematika menampilkan iklan banner. Iklan dapat dinonaktifkan melalui pembelian dalam aplikasi; lihat Google Play dan informasi dalam aplikasi untuk harga serta rincian terbaru.",
+      "features": [
+        {"title": "Main bersama di satu HP", "text": "Duduk saling berhadapan dan jawab soal matematika di perangkat yang sama."},
+        {"title": "Tingkat berbeda, seru bersama", "text": "Pilih kelas dan tingkat kesulitan yang sesuai untuk setiap pemain agar anak dan orang dewasa bisa ikut bermain."},
+        {"title": "Tantang lawan dari jauh", "text": "Mainkan duel daring bersama teman atau lawan acak. Permainan daring memerlukan koneksi internet."}
+      ],
+      "steps": ["Pilih permainan dua pemain di satu perangkat atau permainan daring.", "Atur kelas, tingkat, dan karakter, lalu mulai pertarungan.", "Jawab soal matematika dan gunakan aksi dalam pertarungan untuk menantang lawan."],
+      "future": "Kami sedang menyiapkan duel melawan CPU tanpa internet, aksesori karakter, dan tampilan tiga pemain teratas per kelas. Beberapa tangkapan layar dan video menampilkan fitur yang akan datang ini; ketersediaannya bergantung pada versi yang didistribusikan melalui Google Play.",
+      "faqs": [
+        {"q": "Bisakah dua orang bermain di satu HP?", "a": "Bisa. Mode dua pemain di satu perangkat memungkinkan dua orang bermain saling berhadapan menggunakan satu HP Android."},
+        {"q": "Bisakah orang tua dan anak memakai tingkat yang berbeda?", "a": "Bisa. Setiap pemain dapat memilih kelas dan tingkat masing-masing. Sesuaikan pengaturan dengan kemampuan setiap pemain."},
+        {"q": "Apakah koneksi internet diperlukan?", "a": "Duel daring memerlukan koneksi internet. Mode melawan CPU tanpa internet sedang disiapkan untuk pembaruan mendatang; periksa versi dan informasi di Google Play."},
+        {"q": "Bahasa apa saja yang didukung?", "a": "Bahasa Jepang, Inggris, Spanyol, Indonesia, dan Korea tersedia dalam aplikasi."},
+        {"q": "Apakah game ini memiliki iklan atau pembelian?", "a": "Game ini menampilkan iklan banner dan menyediakan pembelian dalam aplikasi untuk menonaktifkan iklan. Pembelian diproses melalui Google Play Billing."}
+      ]
+    }
+  },
+  "privacy": {
+    "title": "Kebijakan privasi | EduCraft Creators",
+    "description": "Cara EduCraft Creators menangani informasi dalam aplikasi belajar dan situs multibahasanya, termasuk duel matematika daring, iklan, pembelian, dan penghapusan data.",
+    "dates": "Ditetapkan: 8 Juli 2026 · Diperbarui: 31 Oktober 2026",
+    "sections": [
+      {"id": "scope", "title": "Aplikasi yang dicakup", "paragraphs": ["Kebijakan ini berlaku untuk Math Quest Masters, Math Defender, Kazu Tap, Pertarungan Matematika, dan Semangka Mengantuk Kaba, termasuk aplikasi yang sedang disiapkan untuk dirilis."]},
+      {"id": "information", "title": "Informasi yang digunakan aplikasi", "paragraphs": ["Aplikasi tidak meminta pengguna memasukkan nama asli, alamat email, atau kontak. Pertarungan Matematika menggunakan profil anonim dan informasi pertarungan yang dijelaskan di bawah ini. Informasi yang diproses layanan iklan dijelaskan dalam bagian Iklan.", "Dalam Semangka Mengantuk Kaba, foto yang dipilih dari perangkat, referensi foto tersebut, nama tempat yang disesuaikan, dan ucapan karakter hanya digunakan di perangkat. Informasi ini tidak dikirim ke server pengembang atau pihak ketiga."]},
+      {"id": "device", "title": "Informasi yang disimpan di perangkat", "paragraphs": ["Bergantung pada aplikasinya, perangkat dapat menyimpan nama simpanan/profil, riwayat skor dan jawaban, kemajuan belajar, pencapaian bab dan misi, pengaturan suara dan bahasa, status konfirmasi kebijakan, status pembelian/pembukaan konten, serta referensi foto yang dipilih atau teks yang disesuaikan di perangkat.", "Pertarungan Matematika juga dapat menyimpan ID pemain anonim dan kredensial yang diterbitkan server, nama pertarungan yang dipilih, negara/wilayah opsional, karakter, aksesori, serta kemajuan koleksi. Data perangkat tidak dikirim ke layanan eksternal, kecuali sebagaimana dijelaskan untuk permainan daring dan pembelian di bawah ini."]},
+      {"id": "online", "title": "Layanan jaringan dan pertarungan daring", "paragraphs": ["Pertarungan Matematika menggunakan Cloudflare Workers dan Durable Objects untuk meneruskan komunikasi pertarungan daring dan menyimpan catatan pertarungan anonim, Google AdMob untuk iklan, serta Google Play Billing untuk pembelian dan pemulihannya. Aplikasi tidak menambahkan analitik sendiri atau akun eksternal berbasis alamat email.", "Selama permainan daring, kode ruang sementara atau informasi pencarian lawan, kelas/peringkat, nomor karakter, bahasa tampilan, nomor soal, jawaban yang dipilih, waktu menjawab, HP, kombo, dan status koneksi dikirim serta diproses. Nama pertarungan yang dipilih dari kata-kata yang disediakan, negara/wilayah opsional, serta aksesori yang dipakai juga dapat dibagikan kepada lawan. Nama yang diketik bebas, obrolan, nama asli, kontak, ID iklan, atau ID perangkat tidak dikirim ke server pertarungan. Negara/wilayah dipilih oleh pengguna, bukan diperkirakan dari lokasi atau alamat IP.", "Untuk pertarungan acak, server menyimpan ID pemain anonim, kelas, jumlah pertandingan, kemenangan, persentase kemenangan, rating, nama pertarungan, negara/wilayah opsional, serta karakter dan aksesori yang terakhir digunakan untuk fitur seperti peringkat per kelas. Hasil pertarungan dengan teman tidak ditambahkan ke peringkat ini. Lawan yang dikendalikan secara otomatis dapat ikut bermain jika lawan manusia tidak tersedia; hasilnya dipisahkan dari catatan peringkat pemain manusia.", "Ruang pertarungan kedaluwarsa 20 menit setelah pertarungan terakhir, dan entri pencarian lawan yang belum memperoleh pasangan kedaluwarsa setelah dua menit. Profil anonim dan catatan pertarungan acak disimpan hingga permintaan penghapusan berhasil diproses. Cloudflare dapat memproses sementara informasi jaringan seperti alamat IP untuk membangun koneksi dan menjaga keamanan. Aplikasi tidak menyimpan analitik atau log komunikasi sendiri."]},
+      {"id": "purchases", "title": "Pembelian", "paragraphs": ["Aplikasi dengan fitur berbayar dapat menyertakan izin internet dan pemeriksaan status jaringan yang diperlukan Google Play Billing untuk pembelian dan pemulihannya. Izin tersebut tidak digunakan untuk mengirim skor belajar, foto, nama tempat yang disesuaikan, atau ucapan karakter kepada pengembang. Pengembang tidak menerima nomor kartu pembayaran."]},
+      {"id": "ads", "title": "Iklan", "paragraphs": ["Pertarungan Matematika menampilkan iklan banner Google AdMob dengan pengaturan untuk anak-anak dan pengguna di bawah usia persetujuan, batas rating konten untuk khalayak umum, serta permintaan iklan yang tidak dipersonalisasi. Izin ID iklan Android dihapus dari aplikasi.", "Untuk penayangan iklan, pengukuran, dan pencegahan penipuan, SDK iklan dapat mengirim serta memproses alamat IP, interaksi dengan aplikasi/iklan, informasi diagnostik, dan informasi pengenal. Perkiraan wilayah dapat ditentukan dari alamat IP. Aplikasi tidak meminta izin GPS atau izin lokasi lainnya.", "Setelah pembelian atau pemulihan fitur nonaktifkan iklan, aplikasi berhenti memuat dan menampilkan iklan. Pembelian diproses oleh Google Play Billing. Math Quest Masters dapat menampilkan menu Aplikasi EduCraft lainnya; halaman Google Play eksternal atau browser hanya dibuka setelah konfirmasi."], "links": [{"url": "https://policies.google.com/privacy?hl=id", "text": "Kebijakan Privasi Google"}, {"url": "https://developers.google.com/admob/android/privacy/play-data-disclosure?hl=id", "text": "Pengungkapan data Google Mobile Ads SDK"}]},
+      {"id": "external", "title": "Layanan eksternal", "paragraphs": ["Cloudflare menyediakan layanan penerusan komunikasi daring dan penyimpanan catatan pertarungan acak anonim. Lihat kebijakan privasi Cloudflare untuk mengetahui penanganan informasinya."], "links": [{"url": "https://www.cloudflare.com/privacypolicy/", "text": "Kebijakan Privasi Cloudflare (bahasa Inggris)"}]},
+      {"id": "fight-data-delete", "title": "Menghapus data Pertarungan Matematika", "paragraphs": ["Untuk menghapus ID pemain anonim, catatan pertarungan acak, dan profil di server:"], "steps": ["Buka Pertarungan Matematika saat terhubung ke internet.", "Buka Pengaturan dari beranda, lalu pilih opsi untuk mereset catatan menang/kalah dan catatan daring. Konfirmasikan reset.", "Data server dihapus setelah server berhasil memproses permintaan. Jika koneksi gagal, sambungkan kembali dan coba lagi."], "after": ["Riwayat belajar, skor, stempel, dan catatan pengulangan materi yang disimpan di perangkat dapat dihapus melalui pengaturan aplikasi yang mendukungnya. Reset catatan Pertarungan Matematika biasa tidak menghapus koleksi aksesori di perangkat atau status pembelian nonaktifkan iklan. Jika pencarian lawan acak dimulai lagi setelah penghapusan, ID anonim baru akan diterbitkan.", "Catatan pembelian Google Play serta data yang ditangani AdMob atau layanan eksternal lainnya mengikuti kebijakan penyimpanan dan penghapusan masing-masing layanan. Ruang sementara dan entri pencarian lawan kedaluwarsa sebagaimana dijelaskan di atas."]},
+      {"id": "website", "title": "Pilihan bahasa situs", "paragraphs": ["Alamat utama situs menggunakan bahasa pilihan browser untuk membuka halaman dalam bahasa yang didukung. URL khusus bahasa mempertahankan bahasa halaman yang Anda buka. Bahasa yang dipilih secara manual disimpan di penyimpanan lokal browser ini dan dapat diubah melalui tautan bahasa atau dihapus dengan menghapus data situs. Situs tidak menggunakan geolokasi IP atau menambahkan analitik untuk fitur ini. Tautan Google Play meminta bahasa yang sama dengan halaman; harga dan ketersediaan tetap ditentukan oleh Google Play dan akun Anda."]},
+      {"id": "music", "title": "Musik dan efek suara", "paragraphs": ["Aplikasi menggunakan musik dan efek suara dari OtoLogic. Sumber dan lisensi dicantumkan dalam kredit di aplikasi."]},
+      {"id": "contact", "title": "Kontak", "paragraphs": ["Hubungi kami melalui Dukungan aplikasi di halaman Google Play masing-masing aplikasi."]},
+      {"id": "changes", "title": "Pembaruan kebijakan", "paragraphs": ["Kami dapat memperbarui kebijakan ini seiring perubahan fitur aplikasi, ketersediaan rilis, persyaratan yang berlaku, atau kebijakan toko aplikasi."]}
+    ]
+  }
+}

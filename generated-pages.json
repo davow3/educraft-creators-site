@@ -1,0 +1,35 @@
+{
+  "origin": "https://educraft-creators-site.pages.dev",
+  "languages": [
+    "ja",
+    "en",
+    "es",
+    "id",
+    "ko"
+  ],
+  "pages": [
+    "ja/index.html",
+    "ja/apps/math-quest/index.html",
+    "ja/apps/math-fight/index.html",
+    "ja/privacy/index.html",
+    "en/index.html",
+    "en/apps/math-quest/index.html",
+    "en/apps/math-fight/index.html",
+    "en/privacy/index.html",
+    "es/index.html",
+    "es/apps/math-quest/index.html",
+    "es/apps/math-fight/index.html",
+    "es/privacy/index.html",
+    "id/index.html",
+    "id/apps/math-quest/index.html",
+    "id/apps/math-fight/index.html",
+    "id/privacy/index.html",
+    "ko/index.html",
+    "ko/apps/math-quest/index.html",
+    "ko/apps/math-fight/index.html",
+    "ko/privacy/index.html",
+    "index.html",
+    "privacy.html",
+    "404.html"
+  ]
+}

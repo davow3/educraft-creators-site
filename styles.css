@@ -264,6 +264,94 @@ h3 { margin: 0 0 8px; font-size: 1.18rem; letter-spacing: 0; }
 .policy h2 { font-size: clamp(1.35rem, 2.6vw, 1.8rem); }
 .policy p, .policy li { color: #3f4f5a; }
 .policy ul { padding-left: 1.4rem; }
+
+/* Shared layout for the statically rendered language and app pages. */
+html { scroll-padding-top: 160px; }
+img { height: auto; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+.skip-link { position: absolute; left: 16px; top: -100px; z-index: 50; padding: 12px 18px; color: #fff; background: var(--green); }
+.skip-link:focus { top: 12px; }
+.header-links { display: grid; gap: 8px; justify-items: end; min-width: 0; }
+.brand { max-width: 370px; }
+.brand small { margin-top: 5px; }
+.language-switcher { display: flex; flex-wrap: wrap; gap: 5px; }
+.language-switcher a { padding: 4px 9px; border: 1px solid var(--line); border-radius: 7px; background: #fff; color: var(--muted); font-size: .8rem; line-height: 1.6; }
+.language-switcher a[aria-current="true"], .language-switcher a:hover { border-color: var(--green); color: var(--green); background: var(--mint); }
+.hero h1 { font-size: clamp(2.35rem, 4.6vw, 4.6rem); line-height: 1.2; text-wrap: balance; }
+.hero-character { aspect-ratio: 1; object-fit: contain; }
+.apps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.published-app { grid-template-columns: 88px minmax(0, 1fr); padding: clamp(20px, 3vw, 30px); }
+.published-app > img { width: 88px; height: 88px; }
+.published-app h3 { font-size: 1.4rem; }
+.published-app h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.published-app .status { margin-bottom: 10px; }
+.app-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.text-link { color: var(--green); font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
+.intro .team-grid { margin-top: 20px; }
+.intro > h3 { margin-top: 36px; }
+.team-member h4 { margin: 0 0 6px; font-size: 1.2rem; }
+.development-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.development-card { display: flex; align-items: flex-start; gap: 16px; min-width: 0; }
+.development-card img { flex: 0 0 64px; width: 64px; border-radius: 10px; }
+.development-card p { color: var(--muted); margin: 0; }
+.development-card h3 { font-size: 1.05rem; }
+.breadcrumbs { padding-top: 24px; padding-bottom: 0; color: var(--muted); font-size: .9rem; }
+.breadcrumbs a { text-decoration: underline; text-underline-offset: 3px; }
+.app-hero { display: grid; grid-template-columns: minmax(0, 1fr) 220px; align-items: center; gap: 48px; padding-top: 42px; padding-bottom: 28px; }
+.app-hero h1 { font-size: clamp(2.15rem, 5vw, 4rem); line-height: 1.2; }
+.app-hero-icon { width: 220px; height: 220px; border-radius: 28px; box-shadow: var(--shadow); }
+.app-tagline { color: var(--green); font-weight: 900; font-size: clamp(1.2rem, 2.8vw, 1.75rem); line-height: 1.45; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.feature-card { padding: 26px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.feature-card h2 { font-size: 1.25rem; line-height: 1.45; }
+.feature-card p { color: var(--muted); margin-bottom: 0; }
+.parent-note { padding: 20px 26px; margin-top: 24px; background: var(--mint); border-radius: 10px; }
+.parent-note p { margin: 6px 0; }
+.play-guide { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 64px; align-items: start; padding-top: 12px; }
+.steps { padding-left: 1.5rem; margin-top: 24px; }
+.steps li { padding-left: 8px; margin-bottom: 18px; }
+.steps li::marker { color: var(--green); font-weight: 900; }
+.game-screenshot { margin: 0; }
+.game-screenshot img { width: 100%; border-radius: 18px; border: 5px solid #fff; box-shadow: var(--shadow); }
+.game-screenshot figcaption { margin-top: 14px; font-size: .82rem; color: var(--muted); }
+.update-note { margin-top: 32px; padding: 22px; border-left: 4px solid #d7a23e; background: #fff5d9; border-radius: 0 10px 10px 0; }
+.update-note p { margin-bottom: 0; }
+.faq-section { padding-top: 16px; }
+.faq-section > h2 { margin-bottom: 24px; }
+.faq-section details { padding: 18px 22px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.65); }
+.faq-section summary { cursor: pointer; font-weight: 800; }
+.faq-section details p { color: #3f4f5a; }
+.bottom-actions { margin-top: 30px; }
+.policy a { text-decoration: underline; text-underline-offset: 3px; }
+.policy section { scroll-margin-top: 150px; }
+.not-found { max-width: 800px; padding-top: 15vh; }
+.not-found .language-switcher { margin-top: 28px; }
+@media (max-width: 900px) {
+  .header-links { justify-items: start; }
+  .apps-grid, .feature-grid, .development-grid { grid-template-columns: 1fr; }
+  .app-hero { grid-template-columns: minmax(0,1fr) 150px; gap: 28px; }
+  .app-hero-icon { width: 150px; height: 150px; }
+  .play-guide { grid-template-columns: minmax(0,1fr) 260px; gap: 30px; }
+}
+@media (max-width: 560px) {
+  html { scroll-padding-top: 20px; }
+  .site-header { position: relative; gap: 14px; padding-top: 16px; padding-bottom: 16px; }
+  .nav { gap: 2px; }
+  .nav a { padding: 5px 8px; font-size: .85rem; }
+  .language-switcher { gap: 4px; }
+  .language-switcher a { padding: 4px 7px; font-size: .75rem; }
+  .hero { padding-top: 42px; }
+  .hero-art { min-height: 300px; }
+  .published-app { grid-template-columns: 1fr; }
+  .published-app > img { width: 72px; height: 72px; }
+  .app-hero { grid-template-columns: 1fr; gap: 20px; }
+  .app-hero-icon { width: 110px; height: 110px; grid-row: 1; }
+  .play-guide { grid-template-columns: 1fr; gap: 36px; }
+  .game-screenshot { max-width: 300px; justify-self: center; }
+  .policy section { scroll-margin-top: 20px; }
+  .button { max-width: 100%; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media (max-width: 900px) {
   .site-header { align-items: flex-start; flex-direction: column; }
   .nav { justify-content: flex-start; }

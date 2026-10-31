@@ -1,0 +1,82 @@
+[
+  {
+    "file": "quest-ja.webp",
+    "source": "outputs/quest-release-2026-10-31/homes/quest-ja.png",
+    "width": 1080,
+    "height": 2104,
+    "bytes": 1897192,
+    "sourceBytes": 2886434
+  },
+  {
+    "file": "fight-ja.webp",
+    "source": "outputs/cross-promotion-2026-10-30/fight-ja.png",
+    "width": 1080,
+    "height": 2104,
+    "bytes": 1653876,
+    "sourceBytes": 2441891
+  },
+  {
+    "file": "quest-en.webp",
+    "source": "outputs/quest-release-2026-10-31/homes/quest-en.png",
+    "width": 1080,
+    "height": 2104,
+    "bytes": 1717156,
+    "sourceBytes": 2670346
+  },
+  {
+    "file": "fight-en.webp",
+    "source": "outputs/cross-promotion-2026-10-30/fight-en.png",
+    "width": 1080,
+    "height": 2104,
+    "bytes": 1633664,
+    "sourceBytes": 2406139
+  },
+  {
+    "file": "quest-es.webp",
+    "source": "outputs/quest-release-2026-10-31/homes/quest-es.png",
+    "width": 1080,
+    "height": 2104,
+    "bytes": 1732640,
+    "sourceBytes": 2683550
+  },
+  {
+    "file": "fight-es.webp",
+    "source": "outputs/cross-promotion-2026-10-30/fight-es.png",
+    "width": 1080,
+    "height": 2104,
+    "bytes": 1647028,
+    "sourceBytes": 2425308
+  },
+  {
+    "file": "quest-id.webp",
+    "source": "outputs/quest-release-2026-10-31/homes/quest-id.png",
+    "width": 1080,
+    "height": 2104,
+    "bytes": 1731540,
+    "sourceBytes": 2678641
+  },
+  {
+    "file": "fight-id.webp",
+    "source": "outputs/cross-promotion-2026-10-30/fight-id.png",
+    "width": 1080,
+    "height": 2104,
+    "bytes": 1642116,
+    "sourceBytes": 2409412
+  },
+  {
+    "file": "quest-ko.webp",
+    "source": "outputs/quest-release-2026-10-31/homes/quest-ko.png",
+    "width": 1080,
+    "height": 2104,
+    "bytes": 1707850,
+    "sourceBytes": 2652828
+  },
+  {
+    "file": "fight-ko.webp",
+    "source": "outputs/cross-promotion-2026-10-30/fight-ko.png",
+    "width": 1080,
+    "height": 2104,
+    "bytes": 1640210,
+    "sourceBytes": 2420400
+  }
+]

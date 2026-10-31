@@ -1,0 +1,90 @@
+{
+  "lang": "en",
+  "label": "English",
+  "ogLocale": "en_US",
+  "ui": {
+    "skip": "Skip to content", "apps": "Apps", "about": "About", "contact": "Contact", "privacy": "Privacy policy", "language": "Language", "home": "Home", "details": "Explore this game", "play": "View on Google Play", "watch": "Watch on YouTube", "available": "Available on Google Play", "inDevelopment": "In development", "features": "What you can enjoy", "how": "How to play", "screenshots": "A look inside the game", "screenshotNote": "Screenshots show a development build. Some features are being prepared for a future update.", "faq": "Questions from parents", "plans": "Coming in a future update", "related": "Another way to play with math", "backApps": "Explore all apps", "footer": "An educational app brand by EduCraft Studio.", "notFound": "This page could not be found.", "notFoundText": "Choose your language or return to the home page.", "videoJa": "Video in Japanese", "videoId": "Video in Indonesian", "videoNote": "The opening family scene uses fictional AI-generated people. Game footage is a demonstration and may include upcoming features.", "support": "For support, open App support on the relevant Google Play listing.", "artCredit": "Original characters by akimichi", "team": "The people behind the games", "developer": "Planning and development", "designer": "Characters and world design", "developerText": "yuichi develops small learning experiences that invite children to try one more question.", "designerText": "akimichi's drawings inspire the companions, enemies, and worlds in our games.", "otherApps": "More games in development", "questShot": "Math Quest Masters home screen in English", "fightShot": "Math Fight home screen in English", "websiteLanguage": "The website uses your browser's preferred language at its main entry page. You can switch languages at any time. Your selection is stored only in this browser."
+  },
+  "home": {
+    "title": "Math learning games for kids and family battles | EduCraft Creators",
+    "description": "Discover Math Quest Masters, a math learning RPG for elementary-school topics, and Math Fight, a family math battle game for Android. Explore how to play, screenshots, and parent FAQs.",
+    "eyebrow": "Learn through play, together",
+    "heading": "Math adventures. Family challenges.",
+    "lead": "Turn one more math question into one more adventure. EduCraft Creators makes Android learning games for children and families: explore a story in Math Quest Masters or challenge each other in Math Fight.",
+    "appsTitle": "Choose your way to play with math",
+    "appsLead": "Explore each game's learning topics, play styles, and details for parents before visiting Google Play.",
+    "aboutTitle": "Small ideas, made into playable worlds",
+    "aboutParagraphs": ["EduCraft Creators is an educational app brand by EduCraft Studio. Our games grew from learning and creative activities at home, with original character ideas and illustrations by akimichi.", "We build and improve small games that give children a reason to try, think, and try again. Math Quest Masters and Math Fight are available on Google Play; our other projects are still in development."],
+    "contactTitle": "Questions about a game?",
+    "otherApps": [
+      {"name": "Math Defender", "text": "Answer math questions to defend your castle. Currently in closed testing.", "icon": "app-defense-v2.png"},
+      {"name": "Kazu Tap", "text": "A simple number-tapping learning game for younger children. In development.", "icon": "app-kazutap-v2.png"},
+      {"name": "Kaba's Sleepy Watermelon", "text": "A casual memory game about remembering the order and eating watermelons. In development.", "icon": "app-kaba.png"}
+    ]
+  },
+  "apps": {
+    "quest": {
+      "name": "Math Quest Masters",
+      "title": "Math Quest Masters: a math learning RPG for kids | EduCraft",
+      "description": "Solve elementary-school math questions in an Android RPG. Explore chapters, battle enemies, and collect companions, weapons, and magic in Math Quest Masters.",
+      "tagline": "One more question. One more adventure.",
+      "summary": "An educational RPG built around math topics for Japanese elementary-school grades 1–6. Answer questions to battle enemies, explore chapters, and build your collection of companions, weapons, and magic.",
+      "audience": "Choose learning content that fits your child's experience. Grade labels follow the Japanese elementary-school curriculum; school-year equivalents vary by country.",
+      "billing": "Check the Google Play listing and the app for current pricing, in-app purchases, and available learning content.",
+      "features": [
+        {"title": "Math within an adventure", "text": "Solve questions to move a battle forward and keep exploring the story."},
+        {"title": "Collect your own team", "text": "Discover companions, weapons, and magic as you progress through chapters."},
+        {"title": "Practice at your level", "text": "Choose suitable elementary-school math content and revisit questions as you learn."}
+      ],
+      "steps": ["Choose a level and chapter that suit the learner.", "Read the question, choose an answer, and advance through the battle.", "Use the game's learning and review features to revisit topics, then continue your adventure."],
+      "faqs": [
+        {"q": "Who is this game for?", "a": "Children learning elementary-school math and families looking for a playful way to practice. The grade labels are based on Japanese grades 1–6, so choose by the actual topics rather than age alone."},
+        {"q": "Which languages can I use?", "a": "The interface supports Japanese, English, Spanish, Indonesian, and Korean. The learning sequence follows Japanese elementary-school math topics."},
+        {"q": "Is this the same as Math Fight?", "a": "Math Quest Masters focuses on a single-player RPG adventure. Math Fight focuses on math battles with family, friends, and online opponents."},
+        {"q": "Where can I check price and purchase details?", "a": "Use the Google Play link for current availability and pricing. Content unlocks and purchase details are explained in the app before purchase."}
+      ]
+    },
+    "fight": {
+      "name": "Math Fight",
+      "title": "Math Fight: family math battles on one phone | EduCraft",
+      "description": "Challenge family and friends to math battles on one Android phone, or play online. Each player chooses a suitable grade and level in Math Fight.",
+      "tagline": "One phone. Two players. A math showdown.",
+      "summary": "Face each other across one Android phone for a family math battle. Children and adults can choose their own grade and level. You can also battle a friend remotely or find an online opponent.",
+      "audience": "For families and friends who want to practice math together. Adjust each player's level to make a shared challenge more enjoyable.",
+      "billing": "Math Fight displays banner ads. An in-app purchase can turn ads off; check Google Play and the app for current pricing and details.",
+      "features": [
+        {"title": "Play together on one phone", "text": "Sit opposite each other and answer math questions on the same device."},
+        {"title": "Different levels, shared fun", "text": "Choose a suitable grade and difficulty for each player, so children and adults can join in."},
+        {"title": "Challenge someone far away", "text": "Use online battles with a friend or a random opponent. Online play needs an internet connection."}
+      ],
+      "steps": ["Choose local two-player or online play.", "Set your grade, level, and character, then start the battle.", "Answer math questions and use the game's battle actions to challenge your opponent."],
+      "future": "We are preparing offline CPU battles, character accessories, and a grade-based top-three display. Some screenshots and videos show these upcoming features; availability depends on the version distributed by Google Play.",
+      "faqs": [
+        {"q": "Can two people play on one phone?", "a": "Yes. Local two-player mode lets two players face each other across a single Android phone."},
+        {"q": "Can a parent and child use different levels?", "a": "Yes. Each player can choose their own grade and level. Adjust the settings to fit each learner."},
+        {"q": "Do I need an internet connection?", "a": "Online battles need an internet connection. An offline CPU mode is being prepared for a future update; check the version and information on Google Play."},
+        {"q": "Which languages are supported?", "a": "Japanese, English, Spanish, Indonesian, and Korean are available in the app."},
+        {"q": "Does the game have ads or purchases?", "a": "The game displays banner ads and offers an in-app purchase to turn ads off. Purchases are processed through Google Play Billing."}
+      ]
+    }
+  },
+  "privacy": {
+    "title": "Privacy policy | EduCraft Creators",
+    "description": "How EduCraft Creators handles information in its learning apps and multilingual website, including online math battles, advertising, purchases, and deletion.",
+    "dates": "Established: July 8, 2026 · Updated: October 31, 2026",
+    "sections": [
+      {"id": "scope", "title": "Apps covered", "paragraphs": ["This policy applies to Math Quest Masters, Math Defender, Kazu Tap, Math Fight, and Kaba's Sleepy Watermelon, including apps being prepared for release."]},
+      {"id": "information", "title": "Information used by the apps", "paragraphs": ["The apps do not ask users to enter their real name, email address, or contacts. Math Fight uses the anonymous profile and battle information described below. Information processed by advertising services is explained under Advertising.", "In Kaba's Sleepy Watermelon, photos selected from the device, their references, custom place names, and character lines are used only on the device. They are not sent to the developer's server or third parties."]},
+      {"id": "device", "title": "Information stored on the device", "paragraphs": ["Depending on the app, the device may store save/profile names, score and answer histories, learning progress, chapter and mission achievements, sound and language settings, policy acknowledgement, purchase/unlock status, and locally selected photo references or custom text.", "Math Fight may also store a server-issued anonymous player ID and credentials, a selected battle name, optional country/region, character, accessories, and collection progress. Device data is not sent to external services except as explained for online play and purchases below."]},
+      {"id": "online", "title": "Network services and online battles", "paragraphs": ["Math Fight uses Cloudflare Workers and Durable Objects for online battle relay and anonymous battle records, Google AdMob for ads, and Google Play Billing for purchases and restoration. The apps do not add their own analytics or external accounts based on an email address.", "During online play, temporary room codes or matchmaking information, grade/rank, character number, display language, question number, selected answers, response time, HP, combos, and connection status are transmitted and processed. A battle name chosen from preset words, an optional country/region, and equipped accessories may also be shared with the opponent. No freely entered name, chat, real name, contacts, advertising ID, or device ID is sent to the battle server. Country/region is selected by the user, not inferred from location or IP address.", "For random battles, the server stores an anonymous player ID, grade, match count, wins, win rate, rating, battle name, optional country/region, and the last character and accessories, for features such as grade-based rankings. Friend-battle results are not added to these rankings. An automated opponent may participate if a human opponent is unavailable; those results are kept separate from human-player ranking records.", "Battle rooms expire 20 minutes after the last battle, and unmatched matchmaking entries expire after two minutes. Anonymous profiles and random-battle records are retained until a deletion request is successfully processed. Cloudflare may temporarily process network information such as IP addresses to establish connections and maintain security. The apps do not keep their own analytics or communication logs."]},
+      {"id": "purchases", "title": "Purchases", "paragraphs": ["Apps with paid features may include internet and network-state permissions required by Google Play Billing for purchases and restoration. These permissions are not used to send learning scores, photos, custom place names, or character lines to the developer. The developer does not receive payment card numbers."]},
+      {"id": "ads", "title": "Advertising", "paragraphs": ["Math Fight displays Google AdMob banner ads with child-directed and under-age-of-consent settings, a general-audience content rating limit, and non-personalized ad requests. The Android advertising ID permission is removed from the app.", "For ad delivery, measurement, and fraud prevention, the advertising SDK may transmit and process IP addresses, app/ad interactions, diagnostics, and identifier information. An approximate region may be inferred from an IP address. The app does not request GPS or other location permissions.", "After an ad-off purchase or restoration, the app stops loading and displaying ads. Google Play Billing processes the purchase. Math Quest Masters may show a More EduCraft apps menu; an external Google Play page or browser opens only after confirmation."], "links": [{"url": "https://policies.google.com/privacy?hl=en", "text": "Google Privacy Policy"}, {"url": "https://developers.google.com/admob/android/privacy/play-data-disclosure?hl=en", "text": "Google Mobile Ads SDK data disclosure"}]},
+      {"id": "external", "title": "External services", "paragraphs": ["Cloudflare provides the online relay and anonymous random-battle record service. See Cloudflare's privacy policy for its handling of information."], "links": [{"url": "https://www.cloudflare.com/privacypolicy/", "text": "Cloudflare Privacy Policy (English)"}]},
+      {"id": "fight-data-delete", "title": "Delete Math Fight data", "paragraphs": ["To delete the anonymous player ID, random-battle records, and server profile:"], "steps": ["Open Math Fight while connected to the internet.", "Open Settings from the home screen and choose the option to reset wins/losses and online records. Confirm the reset.", "The server data is deleted when the server successfully processes the request. If the connection fails, reconnect and try again."], "after": ["Local learning histories, scores, stamps, and review records can be deleted in supported apps' settings. A normal Math Fight record reset keeps the on-device accessory collection and ad-off purchase status. Starting random matchmaking again after deletion creates a new anonymous ID.", "Google Play purchase records and data handled by AdMob or other external services follow those services' retention and deletion policies. Temporary rooms and matchmaking entries expire as described above."]},
+      {"id": "website", "title": "Website language preference", "paragraphs": ["The main website entry uses the browser's preferred languages to open a supported language page. Language-specific URLs keep the language you opened. A manually chosen language is stored in this browser's local storage and can be changed with the language links or cleared by deleting site data. The website does not use IP geolocation or add analytics for this feature. Google Play links request the page language; prices and availability remain controlled by Google Play and your account."]},
+      {"id": "music", "title": "Music and sound effects", "paragraphs": ["The apps use music and sound effects from OtoLogic. Sources and licenses are listed in the in-app credits."]},
+      {"id": "contact", "title": "Contact", "paragraphs": ["Use App support on each app's Google Play listing to contact us."]},
+      {"id": "changes", "title": "Policy updates", "paragraphs": ["We may update this policy as app features, release availability, applicable requirements, or store policies change."]}
+    ]
+  }
+}
