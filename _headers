@@ -1,5 +1,7 @@
 /site-language.js
   Cache-Control: public, max-age=3600
+/site-ui.js
+  Cache-Control: public, max-age=3600
 /robots.txt
   Content-Type: text/plain; charset=utf-8
 /sitemap.xml

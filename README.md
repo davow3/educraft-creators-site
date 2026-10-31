@@ -7,9 +7,9 @@ Static educational-app website deployed from this repository by Cloudflare Pages
 Node.js is the only build requirement; there are no npm dependencies.
 
 ```text
-npm run build
-npm test
-npm run preview
+node scripts/build.mjs
+node --test tests/language.test.mjs tests/site.test.mjs tests/ui.test.mjs
+node scripts/serve.mjs
 ```
 
 Edit `content/ja.json`, `en.json`, `es.json`, `id.json`, and `ko.json`, then regenerate the HTML. Each language has a home page, Math Quest Masters page, Math Fight page, and privacy policy. Generated HTML is committed so Cloudflare Pages can continue serving the repository without a new build-service configuration.
@@ -30,3 +30,7 @@ After publishing, inspect indexing and submit the sitemap in Google Search Conso
 ## Separate product pages
 
 `db-bottleneck-analyzer/` and the legacy `pgscope/` route are separate from the learning-app site. Preserve their existing content and noindex settings; they are not included in the learning-app sitemap.
+
+## Mobile interface
+
+The compact header and per-page Google Play dock remain fixed. Navigation and language choices use native disclosures; site-ui.js adds Escape/focus handling and optional motion controls. The cooking-number GIF has a static poster for paused/reduced motion. Character accents run once. See docs/mobile-redesign-2026-11-01.md and docs/cook-animation-prompt.txt.

@@ -8,7 +8,7 @@ const rootReal=await realpath(root);
 const port=Number(process.argv[2] || process.env.PORT || 4173);
 if(!Number.isInteger(port)||port<1||port>65535)throw Error('Choose a port from 1 to 65535.');
 const blocked=new Set(['scripts','content','tests','.git','.openai','node_modules','docs']);
-const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.xml':'application/xml; charset=utf-8','.txt':'text/plain; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.ico':'image/x-icon','.svg':'image/svg+xml','.mp4':'video/mp4'};
+const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.xml':'application/xml; charset=utf-8','.txt':'text/plain; charset=utf-8','.gif':'image/gif','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.ico':'image/x-icon','.svg':'image/svg+xml','.mp4':'video/mp4'};
 const inside=filename=>filename===rootReal||filename.startsWith(rootReal+path.sep);
 async function exists(filename){try{return(await stat(filename)).isFile();}catch{return false;}}
 async function missing(req,res){const file=path.join(root,'404.html');const body=await exists(file)?await readFile(file):Buffer.from('Not found');res.writeHead(404,{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'});res.end(req.method==='HEAD'?undefined:body);}

@@ -33,7 +33,7 @@ test('all generated internal links, fragments and images resolve to real files',
  for(const lang of langs)for(const route of routes){
   const html=read(`${lang}/${route}index.html`);
   for(const match of html.matchAll(/(?:href|src)="(\/[^"#]*)(#[^"]*)?"/g)){
-   const target=match[1],fragment=match[2]?.slice(1);
+   const target=new URL(decode(match[1]),base).pathname,fragment=match[2]?.slice(1);
    const file=path.join(root,target.endsWith('/')?`${target}index.html`:target);
    assert.ok(fs.existsSync(file),`${lang}/${route} -> ${target}`);
    if(fragment)assert.ok(read(path.relative(root,file)).includes(`id="${fragment}"`),`${target}#${fragment}`);

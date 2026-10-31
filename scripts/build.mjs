@@ -26,6 +26,13 @@ function languageLinks(lang, page) {
   return `<nav class="language-switcher" aria-label="${esc(content[lang].ui.language)}">${languages.map(target => `<a href="${href(target, page)}" lang="${target}" hreflang="${target}" data-language="${target}"${target === lang ? ' aria-current="true"' : ''}>${names[target]}</a>`).join('')}</nav>`;
 }
 
+function downloadDock(lang, page) {
+  if (page === 'privacy') return '';
+  const c = content[lang];
+  const apps = page === 'home' ? ['quest', 'fight'] : [page];
+  return `<aside class="download-dock${apps.length === 1 ? ' single-app' : ''}" aria-label="${esc(c.ui.download)}">${apps.map(app => `<a class="download-link ${app}-download" href="${esc(play(lang,app))}" target="_blank" rel="noopener noreferrer"><img class="download-icon" src="/assets/${icons[app]}" alt="" width="44" height="44"><span class="download-copy"><strong>${esc(c.apps[app].name)}</strong><small>Google Play</small></span><span class="download-arrow" aria-hidden="true">↓</span></a>`).join('')}</aside>`;
+}
+
 function frame(lang, page, body, entry = '') {
   const c = content[lang];
   const item = page === 'home' ? c.home : page === 'privacy' ? c.privacy : c.apps[page];
@@ -59,20 +66,20 @@ ${languages.filter(x => x !== lang).map(x => `<meta property="og:locale:alternat
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/styles.css?v=20261101">
 <script src="/site-language.js" defer></script>
+<script src="/site-ui.js?v=20261101" defer></script>
 <script type="application/ld+json">${data}</script>
 </head>
-<body>
+<body${page !== 'privacy' ? ' class="has-download"' : ''} data-page="${page}">
 <a class="skip-link" href="#main">${esc(c.ui.skip)}</a>
 <header class="site-header">
-<a class="brand" href="${href(lang)}"><span class="brand-mark">EC</span><span><strong>EduCraft Creators</strong><small>${esc(c.ui.footer)}</small></span></a>
-<div class="header-links"><nav class="nav" aria-label="${esc(c.ui.home)}">
-<a href="${href(lang)}#apps">${esc(c.ui.apps)}</a><a href="${href(lang)}#team">${esc(c.ui.about)}</a><a href="${href(lang)}#contact">${esc(c.ui.contact)}</a><a href="${href(lang,'privacy')}"${page === 'privacy' ? ' aria-current="page"' : ''}>${esc(c.ui.privacy)}</a>
-</nav>${languageLinks(lang,page)}</div>
+<a class="brand" href="${href(lang)}"><span class="brand-name">EduCraft Creators</span>${['quest','fight'].includes(page) ? `<strong class="brand-app-name">${esc(c.apps[page].name)}</strong>` : ''}</a>
+<details class="site-menu" data-site-menu><summary data-menu-toggle aria-label="${esc(c.ui.menu)}"><span class="menu-dots" aria-hidden="true">⋯</span></summary><div class="menu-panel"><nav class="nav" aria-label="${esc(c.ui.menu)}"><a href="${href(lang)}"${page === 'home' ? ' aria-current="page"' : ''}>${esc(c.ui.home)}</a><a href="${href(lang)}#apps">${esc(c.ui.apps)}</a><a href="${href(lang)}#team">${esc(c.ui.about)}</a><a href="${href(lang)}#contact">${esc(c.ui.contact)}</a><a href="${href(lang,'privacy')}"${page === 'privacy' ? ' aria-current="page"' : ''}>${esc(c.ui.privacy)}</a></nav><details class="language-picker"><summary>🌐 ${names[lang]}</summary>${languageLinks(lang,page)}</details></div></details>
 </header>
 <main id="main">${body}</main>
 <footer class="site-footer"><a href="${href(lang,'privacy')}">${esc(c.ui.privacy)}</a><div class="footer-meta"><span>${esc(c.ui.footer)}</span><span>© 2026– EduCraft Studio / EduCraft Creators</span></div></footer>
+${downloadDock(lang,page)}
 </body></html>\n`;
 }
 
@@ -92,7 +99,7 @@ function videos(lang) {
 
 function home(lang) {
   const c=content[lang], h=c.home;
-  return `<section class="hero"><div class="hero-copy"><p class="eyebrow">${esc(h.eyebrow)}</p><h1>${esc(h.heading)}</h1><p class="lead">${esc(h.lead)}</p><div class="hero-actions">${button(href(lang,'quest'),c.apps.quest.name)}${button(href(lang,'fight'),c.apps.fight.name,true)}</div></div><div class="hero-art"><img class="hero-character main-character cook-character" src="/assets/creator-cook-solid.png" alt="${esc(c.ui.artCredit)}" width="700" height="700" fetchpriority="high"><div class="art-caption">${esc(c.ui.artCredit)}</div></div></section>
+  return `<section class="hero hero-kitchen"><div class="hero-copy"><p class="eyebrow">${esc(h.eyebrow)}</p><h1>${esc(h.heading)}</h1><p class="lead">${esc(h.lead)}</p><div class="hero-actions">${['quest','fight'].map(app=>`<a class="hero-choice ${app}-choice" href="${href(lang,app)}"><img src="/assets/${icons[app]}" alt="" width="52" height="52"><span class="hero-choice-copy"><strong>${esc(c.ui[app === 'quest' ? 'adventure' : 'battle'])}</strong><span>${esc(c.apps[app].name)}</span></span><span class="choice-arrow" aria-hidden="true">→</span></a>`).join('')}</div></div><div class="hero-art kitchen-stage"><img class="opening-animation" src="/assets/cook-numbers.gif" width="512" height="512" alt="${esc(c.ui.cookAnimation)}" fetchpriority="high"><img class="opening-static" src="/assets/cook-numbers-poster.png" width="512" height="512" alt="${esc(c.ui.cookAnimation)}" decoding="async"><button class="motion-toggle" type="button" hidden data-motion-toggle data-label-pause="${esc(c.ui.pauseAnimation)}" data-label-play="${esc(c.ui.playAnimation)}" aria-pressed="false"><span data-motion-label>${esc(c.ui.pauseAnimation)}</span></button><p class="kitchen-caption">${esc(c.ui.openingCaption)}</p></div></section>
 <section class="section apps-section" id="apps"><div class="section-heading"><h2>${esc(h.appsTitle)}</h2><p>${esc(h.appsLead)}</p></div><div class="apps-grid">${card(lang,'quest')}${card(lang,'fight')}</div></section>
 ${videos(lang)}
 <section class="section intro" id="team"><div class="section-heading"><h2>${esc(h.aboutTitle)}</h2></div><div class="intro-grid">${h.aboutParagraphs.map(paragraph).join('')}</div><h3>${esc(c.ui.team)}</h3><div class="team-grid"><article class="team-member"><img src="/assets/creator-cook.png" alt="${esc(c.ui.artCredit)}" width="150" height="150" loading="lazy"><div><h4>yuichi</h4><p class="role">${esc(c.ui.developer)}</p>${paragraph(c.ui.developerText)}</div></article><article class="team-member"><img src="/assets/creator-eraser.png" alt="${esc(c.ui.artCredit)}" width="150" height="150" loading="lazy"><div><h4>akimichi</h4><p class="role">${esc(c.ui.designer)}</p>${paragraph(c.ui.designerText)}</div></article></div></section>
@@ -103,7 +110,7 @@ ${videos(lang)}
 function appPage(lang, app) {
   const c=content[lang], a=c.apps[app], other=app==='quest'?'fight':'quest';
   return `<div class="section breadcrumbs"><a href="${href(lang)}">${esc(c.ui.home)}</a><span aria-hidden="true"> / </span><span>${esc(a.name)}</span></div>
-<section class="app-hero section"><div><p class="status completed">${esc(c.ui.available)}</p><h1>${esc(a.name)}</h1><p class="app-tagline">${esc(a.tagline)}</p><p class="lead">${esc(a.summary)}</p><div class="hero-actions">${external(play(lang,app),c.ui.play,'button primary')}${button(href(lang,'privacy'),c.ui.privacy,true)}</div></div><img class="app-hero-icon" src="/assets/${icons[app]}" alt="${esc(a.name)}" width="256" height="256"></section>
+<section class="app-hero section"><div><p class="status completed">${esc(c.ui.available)}</p><h1>${esc(a.name)}</h1><p class="app-tagline">${esc(a.tagline)}</p><p class="lead">${esc(a.summary)}</p><div class="hero-actions">${external(play(lang,app),c.ui.play,'button primary')}${button(href(lang,'privacy'),c.ui.privacy,true)}</div></div>${app === 'quest' ? '<div class="app-hero-art quest-scene" aria-hidden="true"><img class="character-motion" src="/assets/hero-adventurer.webp" alt="" width="512" height="512" decoding="async"></div>' : '<div class="app-hero-art fight-scene" aria-hidden="true"><img class="opponent-left character-motion" src="/assets/fight-cook.webp" alt="" width="512" height="512" decoding="async"><span class="versus">VS</span><img class="opponent-right character-motion" src="/assets/fight-knight.webp" alt="" width="512" height="512" decoding="async"></div>'}</section>
 <section class="section"><div class="feature-grid">${a.features.map(f=>`<article class="feature-card"><h2>${esc(f.title)}</h2>${paragraph(f.text)}</article>`).join('')}</div><div class="parent-note">${paragraph(a.audience)}${paragraph(a.billing)}</div></section>
 <section class="section play-guide"><div><h2>${esc(c.ui.how)}</h2><ol class="steps">${a.steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>${a.future ? `<aside class="update-note"><h3>${esc(c.ui.plans)}</h3>${paragraph(a.future)}</aside>` : ''}</div><figure class="game-screenshot"><img src="/assets/screenshots/${app}-${lang}.webp" alt="${esc(c.ui[app+'Shot'])}" width="1080" height="2104" loading="lazy" decoding="async"><figcaption>${esc(c.ui.screenshotNote)}</figcaption></figure></section>
 <section class="section faq-section"><h2>${esc(c.ui.faq)}</h2>${a.faqs.map(f=>`<details><summary>${esc(f.q)}</summary>${paragraph(f.a)}</details>`).join('')}</section>
@@ -124,9 +131,9 @@ for (const lang of languages) {
 }
 write('index.html',frame('ja','home',home('ja'),'home'));
 write('privacy.html',frame('ja','privacy',privacy('ja'),'privacy'));
-write('404.html',`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>404 | EduCraft Creators</title><link rel="stylesheet" href="/styles.css"></head><body><main class="section not-found"><p class="eyebrow">EduCraft Creators · 404</p><h1>Page not found</h1><p>This page could not be found. Choose your language to continue.</p><nav class="language-switcher">${languages.map(lang=>`<a href="${href(lang)}" lang="${lang}">${names[lang]}</a>`).join('')}</nav></main></body></html>\n`);
+write('404.html',`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>404 | EduCraft Creators</title><link rel="stylesheet" href="/styles.css?v=20261101"></head><body><main class="section not-found"><p class="eyebrow">EduCraft Creators · 404</p><h1>Page not found</h1><p>This page could not be found. Choose your language to continue.</p><nav class="language-switcher">${languages.map(lang=>`<a href="${href(lang)}" lang="${lang}">${names[lang]}</a>`).join('')}</nav></main></body></html>\n`);
 write('robots.txt',`User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
 write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${languages.flatMap(lang=>Object.keys(routes).map(page=>`<url><loc>${origin}${href(lang,page)}</loc>${languages.map(alt=>`<xhtml:link rel="alternate" hreflang="${alt}" href="${origin}${href(alt,page)}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${origin}${page==='home'?'/':href('en',page)}"/></url>`)).join('\n')}\n</urlset>\n`);
-write('_headers',`/site-language.js\n  Cache-Control: public, max-age=3600\n/robots.txt\n  Content-Type: text/plain; charset=utf-8\n/sitemap.xml\n  Content-Type: application/xml; charset=utf-8\n/content/*\n  X-Robots-Tag: noindex\n/scripts/*\n  X-Robots-Tag: noindex\n/tests/*\n  X-Robots-Tag: noindex\n`);
+write('_headers',`/site-language.js\n  Cache-Control: public, max-age=3600\n/site-ui.js\n  Cache-Control: public, max-age=3600\n/robots.txt\n  Content-Type: text/plain; charset=utf-8\n/sitemap.xml\n  Content-Type: application/xml; charset=utf-8\n/content/*\n  X-Robots-Tag: noindex\n/scripts/*\n  X-Robots-Tag: noindex\n/tests/*\n  X-Robots-Tag: noindex\n`);
 write('generated-pages.json',JSON.stringify({origin,languages,pages:written.filter(p=>p.endsWith('.html'))},null,2)+'\n');
 console.log(`Generated ${languages.length*4} localized pages, legacy entries, sitemap, robots, and 404.`);
