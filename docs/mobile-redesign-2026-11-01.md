@@ -25,3 +25,13 @@ The generated sprite sheet and alternative format are retained in the task's loc
 ## Publication
 
 Production URL: https://educraft-creators-site.pages.dev/ . Final commit and public HTTP confirmation are recorded in the Android workspace release log.
+
+## Cooking GIF edge correction — 2026-11-01
+
+The first public GIF had a pan extending beyond the first sprite cell and a neighboring fragment entering the left edge of the next frame. It has been replaced with five independently generated full images, each based on the same complete cook and pan. No sheet is sliced, no image edge is cropped, and only a whole-frame resize is used for GIF encoding.
+
+- Current assets: assets/cook-numbers-v2.gif and assets/cook-numbers-v2-poster.png; versioned paths avoid reuse of the previous cached GIF.
+- Five decoded frames, 512×512, 2.4 seconds, 213,695 bytes. Global palette, transparency, full-frame disposal.
+- Every decoded frame has at least 36px of clear border. All five were visually checked for the entire pan, handle, digits, stray fragments, and registration. Independent review found no missing edges, fragments or major position jumps.
+- The poster is decoded from the exact last GIF frame, so pause uses the same colors and clean transparent border.
+- Mode: built-in image_gen, one call per frame. Exact prompts: docs/cook-animation-v2-prompts.txt. Source PNGs and decoded-frame quality evidence are retained in the Android task outputs, not published.

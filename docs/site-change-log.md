@@ -87,3 +87,8 @@ EduCraft Creators site のメンテナンス履歴です。
 - About に大きく出していた事業情報を削除し、フッターに控えめ表示へ変更
 - アプリ一覧のアイコンを最新素材に差し替え
 - 屋号 `EduCraft Studio`、制作ブランド `EduCraft Creators`、運営者名をフッターに整理
+
+## 2026-11-01 Cooking animation edge correction
+
+- Replaced the cropped-sheet GIF with five independent complete frames; removed the left-edge pan fragment and right-edge clipping.
+- Verified every decoded frame and its transparent border. Published versioned GIF/poster paths; all localized content and search metadata are preserved.
