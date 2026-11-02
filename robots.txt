@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://educraft-creators-site.pages.dev/sitemap.xml
+Sitemap: https://educraft-creators-site.pages.dev/sitemap-pages.txt

@@ -55,6 +55,10 @@ test('sitemap contains only canonical public language pages and is XML rather th
  const sitemap=read('sitemap.xml');assert.ok(sitemap.startsWith('<?xml '));
  const locations=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(x=>x[1]);
  assert.equal(locations.length,20);assert.equal(new Set(locations).size,20);
+ const textSitemap=read('sitemap-pages.txt');
+ assert.equal(textSitemap.charCodeAt(0),104,'Text sitemap starts directly with https, without a BOM or markup');
+ assert.deepEqual(textSitemap.trimEnd().split('\n'),locations,'Both formats must list the same canonical URLs in the same order');
+ assert.ok(read('robots.txt').includes(`Sitemap: ${base}/sitemap-pages.txt`));
  assert.ok(!sitemap.includes('db-bottleneck-analyzer'));assert.ok(!sitemap.includes('pgscope'));
  for(const lang of langs)for(const route of routes)assert.ok(locations.includes(`${base}/${lang}/${route}`));
  assert.match(read('robots.txt'),new RegExp(`Sitemap: ${base}/sitemap.xml`));
