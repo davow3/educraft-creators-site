@@ -51,23 +51,38 @@ test('Google Play links use the page language without forcing a country',()=>{
  }
 });
 
-test('sitemap contains only canonical public language pages and is XML rather than fallback HTML',()=>{
+test('sitemaps contain the selector and the canonical language pages',()=>{
  const sitemap=read('sitemap.xml');assert.ok(sitemap.startsWith('<?xml '));
  const locations=[...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(x=>x[1]);
- assert.equal(locations.length,20);assert.equal(new Set(locations).size,20);
+ assert.deepEqual(locations,[`${base}/`,...langs.flatMap(lang=>routes.map(route=>`${base}/${lang}/${route}`))]);
+ const homeEntries=[...sitemap.matchAll(/<url><loc>(.*?)<\/loc>(.*?)<\/url>/g)].filter(([,location])=>location===`${base}/`||langs.some(lang=>location===`${base}/${lang}/`));
+ for(const [,location,links] of homeEntries){
+  for(const lang of langs)assert.ok(links.includes(`hreflang="${lang}" href="${base}/${lang}/"`),location);
+  assert.ok(links.includes(`hreflang="x-default" href="${base}/"`),location);
+ }
  const textSitemap=read('sitemap-pages.txt');
  assert.equal(textSitemap.charCodeAt(0),104,'Text sitemap starts directly with https, without a BOM or markup');
  assert.deepEqual(textSitemap.trimEnd().split('\n'),locations,'Both formats must list the same canonical URLs in the same order');
  assert.ok(read('robots.txt').includes(`Sitemap: ${base}/sitemap-pages.txt`));
  assert.ok(!sitemap.includes('db-bottleneck-analyzer'));assert.ok(!sitemap.includes('pgscope'));
- for(const lang of langs)for(const route of routes)assert.ok(locations.includes(`${base}/${lang}/${route}`));
  assert.match(read('robots.txt'),new RegExp(`Sitemap: ${base}/sitemap.xml`));
  assert.ok(!read('robots.txt').includes('<html'));
 });
 
-test('legacy neutral entries preserve content and deletion anchors with an explicit language-entry marker',()=>{
- const home=read('index.html'),privacy=read('privacy.html');
- assert.ok(home.includes('data-language-entry="home"'));assert.ok(home.includes(`href="${base}/ja/"`));
+test('the root is a self-canonical selector with reciprocal alternates and native links',()=>{
+ const home=read('index.html');
+ assert.ok(home.includes('data-language-entry="home"'));
+ assert.ok(home.includes(`<link rel="canonical" href="${base}/">`));
+ assert.ok(home.includes(`<link rel="alternate" hreflang="x-default" href="${base}/">`));
+ for(const lang of langs){
+  assert.ok(home.includes(`<link rel="alternate" hreflang="${lang}" href="${base}/${lang}/">`));
+  assert.ok(home.includes(`href="/${lang}/" lang="${lang}" hreflang="${lang}" data-language="${lang}"`));
+  assert.ok(read(`${lang}/index.html`).includes(`<link rel="alternate" hreflang="x-default" href="${base}/">`));
+ }
+});
+
+test('legacy privacy entries preserve deletion anchors',()=>{
+ const privacy=read('privacy.html');
  assert.ok(privacy.includes('data-language-entry="privacy"'));assert.ok(privacy.includes('id="fight-data-delete"'));
  for(const lang of langs)assert.ok(read(`${lang}/privacy/index.html`).includes('id="fight-data-delete"'));
  assert.ok(read('404.html').includes('<meta name="robots" content="noindex">'));

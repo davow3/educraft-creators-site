@@ -27,7 +27,16 @@ test('home query and hash survive routing', () => {
 test('legacy aliases retain the intended page', () => {
   assert.equal(api.resolveRedirect({href:'https://example.test/privacy.html?utm=x#fight-data-delete',entry:'privacy',saved:'id'}),'https://example.test/id/privacy/?utm=x#fight-data-delete');
   assert.equal(api.resolveRedirect({href:'https://example.test/privacy#ads',entry:'privacy',languages:['ko-KR']}),'https://example.test/ko/privacy/#ads');
-  for (const path of ['/index','/index.html']) assert.equal(api.resolveRedirect({href:'https://example.test'+path,entry:'home',languages:['ja-JP']}),'https://example.test/ja/');
+  for (const path of ['/','/index','/index.html']) assert.equal(api.resolveRedirect({href:'https://example.test'+path+'#team',entry:'home',languages:['ja-JP']}),'https://example.test/ja/#team');
+});
+test('the selector stays at the root for ordinary visits and forwards query parameters on its links', () => {
+  for (const path of ['/','/index','/index.html']) assert.equal(api.resolveRedirect({href:'https://example.test'+path,entry:'home',saved:'ja',languages:['en']}),null);
+  const f=fixture({href:'https://example.test/?utm_source=video&lang=de',entry:'home',saved:'ja'});
+  const anchors=[{href:'https://example.test/en/'},{href:'https://example.test/ja/'}];
+  f.win.document.querySelectorAll=()=>anchors;
+  api.boot(f.win);
+  assert.deepEqual(f.redirects,[]);
+  assert.deepEqual(anchors.map(anchor=>anchor.href),['https://example.test/en/?utm_source=video','https://example.test/ja/?utm_source=video']);
 });
 test('localized and unknown paths cannot redirect even with a mistaken marker', () => {
   for (const path of ['/es/','/ja/apps/math-fight/','/ko/privacy/','/unknown','/index.html/']) assert.equal(api.resolveRedirect({href:'https://example.test'+path+'?lang=en',entry:'home',saved:'en'}),null);

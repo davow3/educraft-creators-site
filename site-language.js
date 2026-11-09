@@ -28,7 +28,10 @@
     var valid = options.entry === 'home' && ['/', '/index', '/index.html'].indexOf(current.pathname) >= 0;
     valid = valid || options.entry === 'privacy' && ['/privacy', '/privacy.html'].indexOf(current.pathname) >= 0;
     if (!valid) return null;
-    var language = select({explicit: current.searchParams.get('lang'), saved: options.saved, languages: options.languages});
+    var explicit = current.searchParams.get('lang');
+    // Keep the selector at its own URL. Honor older links to home sections and explicit language links.
+    if (options.entry === 'home' && !normalize(explicit) && !current.hash) return null;
+    var language = select({explicit: explicit, saved: options.saved, languages: options.languages});
     var target = new URL('/' + language + '/' + (options.entry === 'privacy' ? 'privacy/' : ''), current.origin);
     current.searchParams.delete('lang');
     target.search = current.searchParams.toString();
@@ -57,6 +60,16 @@
     if (destination) {
       save(win, new URL(win.location.href).searchParams.get('lang'));
       win.location.replace(destination);
+    } else if (entry === 'home') {
+      var current = new URL(win.location.href);
+      current.searchParams.delete('lang');
+      if (current.search) {
+        doc.querySelectorAll('a[data-language]').forEach(function (anchor) {
+          var target = new URL(anchor.href);
+          target.search = current.search;
+          anchor.href = target.href;
+        });
+      }
     }
   }
   return { supported: supported.slice(), storageKey: key, normalizeLanguage: normalize, selectLanguage: select, resolveRedirect: redirect, boot: boot };

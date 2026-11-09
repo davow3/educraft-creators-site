@@ -18,12 +18,56 @@ const button = (url, text, ghost = false) => `<a class="button ${ghost ? 'ghost'
 const paragraph = text => `<p>${esc(text)}</p>`;
 
 function alternates(page) {
-  return languages.map(lang => `<link rel="alternate" hreflang="${lang}" href="${origin}${href(lang, page)}">`).join('\n') +
-    `\n<link rel="alternate" hreflang="x-default" href="${origin}${page === 'home' ? '/' : href('en', page)}">`;
+  return [
+    ...languages.map(lang => [lang, href(lang, page)]),
+    ['x-default', page === 'home' ? '/' : href('en', page)],
+  ];
 }
 
 function languageLinks(lang, page) {
-  return `<nav class="language-switcher" aria-label="${esc(content[lang].ui.language)}">${languages.map(target => `<a href="${href(target, page)}" lang="${target}" hreflang="${target}" data-language="${target}"${target === lang ? ' aria-current="true"' : ''}>${names[target]}</a>`).join('')}</nav>`;
+  return `<nav class="language-switcher" aria-label="${esc(content[lang ?? 'en'].ui.language)}">${languages.map(target => `<a href="${href(target, page)}" lang="${target}" hreflang="${target}" data-language="${target}"${target === lang ? ' aria-current="true"' : ''}>${names[target]}</a>`).join('')}</nav>`;
+}
+
+function alternateHtml(page) {
+  return alternates(page).map(([lang, route]) => `<link rel="alternate" hreflang="${lang}" href="${origin}${route}">`).join('\n');
+}
+
+function languageSelector() {
+  const title = 'Choose your language | EduCraft Creators';
+  const description = 'Choose your language to explore math games for children and families.';
+  return `<!doctype html>
+<html lang="en" data-language-entry="home">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${title}</title>
+<meta name="description" content="${description}">
+<link rel="canonical" href="${origin}/">
+${alternateHtml('home')}
+<meta property="og:title" content="${title}">
+<meta property="og:description" content="${description}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="${origin}/">
+<meta property="og:site_name" content="EduCraft Creators">
+<meta property="og:image" content="${origin}/assets/${icons.quest}">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/styles.css?v=20261101">
+<script src="/site-language.js?v=20261110" defer></script>
+</head>
+<body>
+<main class="section">
+<div class="section-heading">
+<p class="eyebrow">EduCraft Creators</p>
+<h1>Choose your language</h1>
+<p>Explore math games for children and families.</p>
+</div>
+${languageLinks(null, 'home')}
+</main>
+</body>
+</html>
+`;
 }
 
 function downloadDock(lang, page) {
@@ -53,7 +97,7 @@ function frame(lang, page, body, entry = '') {
 <title>${esc(item.title)}</title>
 <meta name="description" content="${esc(item.description)}">
 <link rel="canonical" href="${url}">
-${alternates(page)}
+${alternateHtml(page)}
 <meta property="og:title" content="${esc(item.title)}">
 <meta property="og:description" content="${esc(item.description)}">
 <meta property="og:type" content="website">
@@ -129,13 +173,18 @@ for (const lang of languages) {
   for(const app of ['quest','fight']) write(`${lang}/${routes[app]}index.html`,frame(lang,app,appPage(lang,app)));
   write(`${lang}/privacy/index.html`,frame(lang,'privacy',privacy(lang)));
 }
-write('index.html',frame('ja','home',home('ja'),'home'));
+write('index.html',languageSelector());
 write('privacy.html',frame('ja','privacy',privacy('ja'),'privacy'));
 write('404.html',`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>404 | EduCraft Creators</title><link rel="stylesheet" href="/styles.css?v=20261101"></head><body><main class="section not-found"><p class="eyebrow">EduCraft Creators · 404</p><h1>Page not found</h1><p>This page could not be found. Choose your language to continue.</p><nav class="language-switcher">${languages.map(lang=>`<a href="${href(lang)}" lang="${lang}">${names[lang]}</a>`).join('')}</nav></main></body></html>\n`);
 write('robots.txt',`User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\nSitemap: ${origin}/sitemap-pages.txt\n`);
 // Keep a URL-only sitemap available to diagnose fetch/processing independently of XML extensions.
-write('sitemap-pages.txt',languages.flatMap(lang=>Object.keys(routes).map(page=>`${origin}${href(lang,page)}`)).join('\n')+'\n');
-write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${languages.flatMap(lang=>Object.keys(routes).map(page=>`<url><loc>${origin}${href(lang,page)}</loc>${languages.map(alt=>`<xhtml:link rel="alternate" hreflang="${alt}" href="${origin}${href(alt,page)}"/>`).join('')}<xhtml:link rel="alternate" hreflang="x-default" href="${origin}${page==='home'?'/':href('en',page)}"/></url>`)).join('\n')}\n</urlset>\n`);
+const sitemapPages = [['/', 'home'], ...languages.flatMap(lang => Object.keys(routes).map(page => [href(lang, page), page]))];
+write('sitemap-pages.txt',sitemapPages.map(([route]) => origin + route).join('\n')+'\n');
+const sitemapEntries = sitemapPages.map(([route, page]) => {
+  const links = alternates(page).map(([lang, target]) => `<xhtml:link rel="alternate" hreflang="${lang}" href="${origin}${target}"/>`).join('');
+  return `<url><loc>${origin}${route}</loc>${links}</url>`;
+});
+write('sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${sitemapEntries.join('\n')}\n</urlset>\n`);
 write('_headers',`/site-language.js\n  Cache-Control: public, max-age=3600\n/site-ui.js\n  Cache-Control: public, max-age=3600\n/robots.txt\n  Content-Type: text/plain; charset=utf-8\n/sitemap.xml\n  Content-Type: application/xml; charset=utf-8\n/sitemap-pages.txt\n  Content-Type: text/plain; charset=utf-8\n/content/*\n  X-Robots-Tag: noindex\n/scripts/*\n  X-Robots-Tag: noindex\n/tests/*\n  X-Robots-Tag: noindex\n`);
 write('generated-pages.json',JSON.stringify({origin,languages,pages:written.filter(p=>p.endsWith('.html'))},null,2)+'\n');
 console.log(`Generated ${languages.length*4} localized pages, legacy entries, sitemap, robots, and 404.`);
